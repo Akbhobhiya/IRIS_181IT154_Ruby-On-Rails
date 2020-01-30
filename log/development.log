@@ -1,0 +1,2342 @@
+  [1m[35m (18.8ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  ↳ /usr/local/bin/rake:23
+  [1m[35m (6.6ms)[0m  [1m[35mCREATE DATABASE `shop_development` DEFAULT CHARACTER SET `utf8`[0m
+  ↳ /usr/local/bin/rake:23
+  [1m[35m (0.9ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  ↳ /usr/local/bin/rake:23
+  [1m[35m (12.8ms)[0m  [1m[35mCREATE DATABASE `shop_test` DEFAULT CHARACTER SET `utf8`[0m
+  ↳ /usr/local/bin/rake:23
+  [1m[35m (1.0ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  ↳ /usr/local/bin/rake:23
+  [1m[35m (356.7ms)[0m  [1m[35mCREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL PRIMARY KEY)[0m
+  ↳ /usr/local/bin/rake:23
+  [1m[35m (413.2ms)[0m  [1m[35mCREATE TABLE `ar_internal_metadata` (`key` varchar(255) NOT NULL PRIMARY KEY, `value` varchar(255), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL)[0m
+  ↳ /usr/local/bin/rake:23
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT GET_LOCK('641904850572142290', 0)[0m
+  ↳ /usr/local/bin/rake:23
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  ↳ /usr/local/bin/rake:23
+Migrating to DeviseCreateUsers (20200128191205)
+  [1m[35m (338.0ms)[0m  [1m[35mCREATE TABLE `users` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `email` varchar(255) DEFAULT '' NOT NULL, `encrypted_password` varchar(255) DEFAULT '' NOT NULL, `reset_password_token` varchar(255), `reset_password_sent_at` datetime, `remember_created_at` datetime, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL)[0m
+  ↳ db/migrate/20200128191205_devise_create_users.rb:5
+  [1m[35m (308.0ms)[0m  [1m[35mCREATE UNIQUE INDEX `index_users_on_email`  ON `users` (`email`) [0m
+  ↳ db/migrate/20200128191205_devise_create_users.rb:39
+  [1m[35m (243.2ms)[0m  [1m[35mCREATE UNIQUE INDEX `index_users_on_reset_password_token`  ON `users` (`reset_password_token`) [0m
+  ↳ db/migrate/20200128191205_devise_create_users.rb:40
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ /usr/local/bin/rake:23
+  [1m[36mActiveRecord::SchemaMigration Create (13.1ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20200128191205')[0m
+  ↳ /usr/local/bin/rake:23
+  [1m[35m (38.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /usr/local/bin/rake:23
+  [1m[36mActiveRecord::InternalMetadata Load (0.6ms)[0m  [1m[34mSELECT  `ar_internal_metadata`.* FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment' LIMIT 1[0m
+  ↳ /usr/local/bin/rake:23
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ /usr/local/bin/rake:23
+  [1m[36mActiveRecord::InternalMetadata Create (0.6ms)[0m  [1m[32mINSERT INTO `ar_internal_metadata` (`key`, `value`, `created_at`, `updated_at`) VALUES ('environment', 'development', '2020-01-28 19:13:03', '2020-01-28 19:13:03')[0m
+  ↳ /usr/local/bin/rake:23
+  [1m[35m (28.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /usr/local/bin/rake:23
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT RELEASE_LOCK('641904850572142290')[0m
+  ↳ /usr/local/bin/rake:23
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  ↳ /usr/local/bin/rake:23
+  [1m[35m (34.6ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  ↳ /usr/local/bin/rake:23
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT GET_LOCK('641904850572142290', 0)[0m
+  ↳ /usr/local/bin/rake:23
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  ↳ /usr/local/bin/rake:23
+Migrating to CreateActiveStorageTables (20200128192106)
+  [1m[35m (2449.9ms)[0m  [1m[35mCREATE TABLE `active_storage_blobs` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `key` varchar(255) NOT NULL, `filename` varchar(255) NOT NULL, `content_type` varchar(255), `metadata` text, `byte_size` bigint NOT NULL, `checksum` varchar(255) NOT NULL, `created_at` datetime NOT NULL, UNIQUE INDEX `index_active_storage_blobs_on_key`  (`key`))[0m
+  ↳ db/migrate/20200128192106_create_active_storage_tables.active_storage.rb:4
+  [1m[35m (495.8ms)[0m  [1m[35mCREATE TABLE `active_storage_attachments` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `name` varchar(255) NOT NULL, `record_type` varchar(255) NOT NULL, `record_id` bigint NOT NULL, `blob_id` bigint NOT NULL, `created_at` datetime NOT NULL,  INDEX `index_active_storage_attachments_on_blob_id`  (`blob_id`), UNIQUE INDEX `index_active_storage_attachments_uniqueness`  (`record_type`, `record_id`, `name`, `blob_id`), CONSTRAINT `fk_rails_c3b3935057`
+FOREIGN KEY (`blob_id`)
+  REFERENCES `active_storage_blobs` (`id`)
+)[0m
+  ↳ db/migrate/20200128192106_create_active_storage_tables.active_storage.rb:16
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ /usr/local/bin/rake:23
+  [1m[36mActiveRecord::SchemaMigration Create (1.0ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20200128192106')[0m
+  ↳ /usr/local/bin/rake:23
+  [1m[35m (58.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /usr/local/bin/rake:23
+  [1m[36mActiveRecord::InternalMetadata Load (0.5ms)[0m  [1m[34mSELECT  `ar_internal_metadata`.* FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment' LIMIT 1[0m
+  ↳ /usr/local/bin/rake:23
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ /usr/local/bin/rake:23
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /usr/local/bin/rake:23
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT RELEASE_LOCK('641904850572142290')[0m
+  ↳ /usr/local/bin/rake:23
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  ↳ /usr/local/bin/rake:23
+Started GET "/" for ::1 at 2020-01-29 01:03:00 +0530
+  [1m[35m (111.2ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+  
+ActiveRecord::PendingMigrationError (
+
+Migrations are pending. To resolve this issue, run:
+
+        bin/rails db:migrate RAILS_ENV=development
+
+):
+  
+activerecord (5.2.4.1) lib/active_record/migration.rb:579:in `check_pending!'
+activerecord (5.2.4.1) lib/active_record/migration.rb:556:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.4.1) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.4.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.4.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.4.1) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.4.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.4.1) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.4.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.1.2) lib/rack/method_override.rb:24:in `call'
+rack (2.1.2) lib/rack/runtime.rb:24:in `call'
+activesupport (5.2.4.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.1.2) lib/rack/sendfile.rb:113:in `call'
+railties (5.2.4.1) lib/rails/engine.rb:524:in `call'
+puma (3.12.2) lib/puma/configuration.rb:227:in `call'
+puma (3.12.2) lib/puma/server.rb:674:in `handle_request'
+puma (3.12.2) lib/puma/server.rb:476:in `process_client'
+puma (3.12.2) lib/puma/server.rb:334:in `block in run'
+puma (3.12.2) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+  [1m[35m (18.8ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  ↳ /usr/local/bin/rake:23
+  [1m[35m (0.7ms)[0m  [1m[35mCREATE DATABASE `shop_development` DEFAULT CHARACTER SET `utf8`[0m
+  ↳ /usr/local/bin/rake:23
+  [1m[35m (0.8ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  ↳ /usr/local/bin/rake:23
+  [1m[35m (0.6ms)[0m  [1m[35mCREATE DATABASE `shop_test` DEFAULT CHARACTER SET `utf8`[0m
+  ↳ /usr/local/bin/rake:23
+  [1m[35m (1.3ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  ↳ /usr/local/bin/rake:23
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT GET_LOCK('641904850572142290', 0)[0m
+  ↳ /usr/local/bin/rake:23
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  ↳ /usr/local/bin/rake:23
+Migrating to CreateOrders (20200128192441)
+  [1m[35m (565.6ms)[0m  [1m[35mCREATE TABLE `orders` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `Name` varchar(255), `Description` text, `Age` int, `Cost` float(24), `Address` text, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL)[0m
+  ↳ db/migrate/20200128192441_create_orders.rb:3
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ /usr/local/bin/rake:23
+  [1m[36mActiveRecord::SchemaMigration Create (0.8ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20200128192441')[0m
+  ↳ /usr/local/bin/rake:23
+  [1m[35m (40.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /usr/local/bin/rake:23
+  [1m[36mActiveRecord::InternalMetadata Load (0.6ms)[0m  [1m[34mSELECT  `ar_internal_metadata`.* FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment' LIMIT 1[0m
+  ↳ /usr/local/bin/rake:23
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ /usr/local/bin/rake:23
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /usr/local/bin/rake:23
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT RELEASE_LOCK('641904850572142290')[0m
+  ↳ /usr/local/bin/rake:23
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  ↳ /usr/local/bin/rake:23
+Started GET "/" for ::1 at 2020-01-29 01:03:40 +0530
+  [1m[35m (49.0ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+  [1m[35m (2.8ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /var/lib/gems/2.5.0/gems/railties-5.2.4.1/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /var/lib/gems/2.5.0/gems/railties-5.2.4.1/lib/rails/templates/rails/welcome/index.html.erb (9.3ms)
+Completed 200 OK in 39ms (Views: 13.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/order" for ::1 at 2020-01-29 01:03:50 +0530
+  
+ActionController::RoutingError (No route matches [GET] "/order"):
+  
+actionpack (5.2.4.1) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.4.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.4.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.4.1) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.4.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.4.1) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.4.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.1.2) lib/rack/method_override.rb:24:in `call'
+rack (2.1.2) lib/rack/runtime.rb:24:in `call'
+activesupport (5.2.4.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.1.2) lib/rack/sendfile.rb:113:in `call'
+railties (5.2.4.1) lib/rails/engine.rb:524:in `call'
+puma (3.12.2) lib/puma/configuration.rb:227:in `call'
+puma (3.12.2) lib/puma/server.rb:674:in `handle_request'
+puma (3.12.2) lib/puma/server.rb:476:in `process_client'
+puma (3.12.2) lib/puma/server.rb:334:in `block in run'
+puma (3.12.2) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/orders" for ::1 at 2020-01-29 01:03:54 +0530
+  
+SyntaxError (/home/ashok/shop/app/controllers/orders_controller.rb:29: syntax error, unexpected tIVAR, expecting ')'
+    @order = Order.new(order_params)
+    ^~~~~~):
+  
+app/controllers/orders_controller.rb:29: syntax error, unexpected tIVAR, expecting ')'
+Started GET "/orders" for ::1 at 2020-01-29 01:06:50 +0530
+  [1m[35m (20.8ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+  
+SyntaxError (/home/ashok/shop/app/controllers/orders_controller.rb:28: syntax error, unexpected tIVAR, expecting ')'
+    @order = Order.new(order_params)
+    ^~~~~~):
+  
+app/controllers/orders_controller.rb:28: syntax error, unexpected tIVAR, expecting ')'
+Started GET "/orders" for ::1 at 2020-01-29 01:10:07 +0530
+Processing by OrdersController#index as HTML
+  Rendering orders/index.html.erb within layouts/application
+  [1m[36mOrder Load (1.0ms)[0m  [1m[34mSELECT `orders`.* FROM `orders`[0m
+  ↳ app/views/orders/index.html.erb:18
+  Rendered orders/index.html.erb within layouts/application (8.0ms)
+Completed 200 OK in 3526ms (Views: 3478.8ms | ActiveRecord: 2.7ms)
+
+
+  [1m[35m (49.3ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  ↳ /usr/local/bin/rake:23
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT GET_LOCK('641904850572142290', 0)[0m
+  ↳ /usr/local/bin/rake:23
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  ↳ /usr/local/bin/rake:23
+Migrating to AddUserToOrder (20200128194123)
+  [1m[35m (936.6ms)[0m  [1m[35mALTER TABLE `orders` ADD `user_id` bigint[0m
+  ↳ db/migrate/20200128194123_add_user_to_order.rb:3
+  [1m[35m (277.5ms)[0m  [1m[35mCREATE  INDEX `index_orders_on_user_id`  ON `orders` (`user_id`) [0m
+  ↳ db/migrate/20200128194123_add_user_to_order.rb:3
+  [1m[35m (1489.0ms)[0m  [1m[35mALTER TABLE `orders` ADD CONSTRAINT `fk_rails_f868b47f6a`
+FOREIGN KEY (`user_id`)
+  REFERENCES `users` (`id`)
+[0m
+  ↳ db/migrate/20200128194123_add_user_to_order.rb:3
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ /usr/local/bin/rake:23
+  [1m[36mActiveRecord::SchemaMigration Create (0.7ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20200128194123')[0m
+  ↳ /usr/local/bin/rake:23
+  [1m[35m (135.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /usr/local/bin/rake:23
+  [1m[36mActiveRecord::InternalMetadata Load (0.9ms)[0m  [1m[34mSELECT  `ar_internal_metadata`.* FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment' LIMIT 1[0m
+  ↳ /usr/local/bin/rake:23
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ /usr/local/bin/rake:23
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /usr/local/bin/rake:23
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT RELEASE_LOCK('641904850572142290')[0m
+  ↳ /usr/local/bin/rake:23
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  ↳ /usr/local/bin/rake:23
+Started GET "/" for ::1 at 2020-01-29 01:21:41 +0530
+  [1m[35m (20.9ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+  [1m[35m (32.4ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+  
+ActionController::RoutingError (uninitialized constant LoginController):
+  
+bootsnap (1.4.5) lib/bootsnap/load_path_cache/core_ext/active_support.rb:79:in `block in load_missing_constant'
+bootsnap (1.4.5) lib/bootsnap/load_path_cache/core_ext/active_support.rb:8:in `without_bootsnap_cache'
+bootsnap (1.4.5) lib/bootsnap/load_path_cache/core_ext/active_support.rb:79:in `rescue in load_missing_constant'
+bootsnap (1.4.5) lib/bootsnap/load_path_cache/core_ext/active_support.rb:58:in `load_missing_constant'
+activesupport (5.2.4.1) lib/active_support/inflector/methods.rb:283:in `const_get'
+activesupport (5.2.4.1) lib/active_support/inflector/methods.rb:283:in `block in constantize'
+activesupport (5.2.4.1) lib/active_support/inflector/methods.rb:281:in `each'
+activesupport (5.2.4.1) lib/active_support/inflector/methods.rb:281:in `inject'
+activesupport (5.2.4.1) lib/active_support/inflector/methods.rb:281:in `constantize'
+actionpack (5.2.4.1) lib/action_dispatch/http/request.rb:88:in `controller_class_for'
+actionpack (5.2.4.1) lib/action_dispatch/http/request.rb:81:in `controller_class'
+actionpack (5.2.4.1) lib/action_dispatch/routing/route_set.rb:46:in `controller'
+actionpack (5.2.4.1) lib/action_dispatch/routing/route_set.rb:32:in `serve'
+actionpack (5.2.4.1) lib/action_dispatch/journey/router.rb:52:in `block in serve'
+actionpack (5.2.4.1) lib/action_dispatch/journey/router.rb:35:in `each'
+actionpack (5.2.4.1) lib/action_dispatch/journey/router.rb:35:in `serve'
+actionpack (5.2.4.1) lib/action_dispatch/routing/route_set.rb:840:in `call'
+warden (1.2.8) lib/warden/manager.rb:36:in `block in call'
+warden (1.2.8) lib/warden/manager.rb:34:in `catch'
+warden (1.2.8) lib/warden/manager.rb:34:in `call'
+rack (2.1.2) lib/rack/tempfile_reaper.rb:17:in `call'
+rack (2.1.2) lib/rack/etag.rb:27:in `call'
+rack (2.1.2) lib/rack/conditional_get.rb:27:in `call'
+rack (2.1.2) lib/rack/head.rb:14:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.1.2) lib/rack/session/abstract/id.rb:269:in `context'
+rack (2.1.2) lib/rack/session/abstract/id.rb:263:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/cookies.rb:670:in `call'
+activerecord (5.2.4.1) lib/active_record/migration.rb:559:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.4.1) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.4.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.4.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.4.1) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.4.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.4.1) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.4.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.1.2) lib/rack/method_override.rb:24:in `call'
+rack (2.1.2) lib/rack/runtime.rb:24:in `call'
+activesupport (5.2.4.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.1.2) lib/rack/sendfile.rb:113:in `call'
+railties (5.2.4.1) lib/rails/engine.rb:524:in `call'
+puma (3.12.2) lib/puma/configuration.rb:227:in `call'
+puma (3.12.2) lib/puma/server.rb:674:in `handle_request'
+puma (3.12.2) lib/puma/server.rb:476:in `process_client'
+puma (3.12.2) lib/puma/server.rb:334:in `block in run'
+puma (3.12.2) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/orders" for ::1 at 2020-01-29 01:21:48 +0530
+Processing by OrdersController#index as HTML
+Completed 401 Unauthorized in 102ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2020-01-29 01:21:48 +0530
+Processing by Devise::SessionsController#new as HTML
+  Rendering /var/lib/gems/2.5.0/gems/devise-4.7.1/app/views/devise/sessions/new.html.erb within layouts/application
+  Rendered /var/lib/gems/2.5.0/gems/devise-4.7.1/app/views/devise/shared/_links.html.erb (2.1ms)
+  Rendered /var/lib/gems/2.5.0/gems/devise-4.7.1/app/views/devise/sessions/new.html.erb within layouts/application (23.0ms)
+Completed 500 Internal Server Error in 559ms (ActiveRecord: 137.2ms)
+
+
+  
+ActionView::Template::Error (No route matches {:action=>"show", :controller=>"orders"}, missing required keys: [:id]):
+    30:     <%= link_to "Order Details", '#', id: "logo" %>
+    31:     <nav>
+    32:       <ul class="nav navbar-nav navbar-right">
+    33:         <li><%= link_to "Home",   order_path , class: "btn "%></li>
+    34:         <% if user_signed_in? %>
+    35:           <li><%= link_to "Account", edit_user_registration_path, class: "btn "  %></li>
+    36:           <li>
+  
+app/views/layouts/application.html.erb:33:in `_app_views_layouts_application_html_erb___3679700434606476518_47378616360280'
+Started GET "/" for ::1 at 2020-01-29 01:22:38 +0530
+  [1m[35m (60.4ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+Processing by OrdersController#index as HTML
+Completed 401 Unauthorized in 10ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2020-01-29 01:22:38 +0530
+Processing by Devise::SessionsController#new as HTML
+  Rendering /var/lib/gems/2.5.0/gems/devise-4.7.1/app/views/devise/sessions/new.html.erb within layouts/application
+  Rendered /var/lib/gems/2.5.0/gems/devise-4.7.1/app/views/devise/shared/_links.html.erb (1.4ms)
+  Rendered /var/lib/gems/2.5.0/gems/devise-4.7.1/app/views/devise/sessions/new.html.erb within layouts/application (18.3ms)
+Completed 500 Internal Server Error in 417ms (ActiveRecord: 3.9ms)
+
+
+  
+ActionView::Template::Error (No route matches {:action=>"show", :controller=>"orders"}, missing required keys: [:id]):
+    30:     <%= link_to "Order Details", '#', id: "logo" %>
+    31:     <nav>
+    32:       <ul class="nav navbar-nav navbar-right">
+    33:         <li><%= link_to "Home",   order_path , class: "btn "%></li>
+    34:         <% if user_signed_in? %>
+    35:           <li><%= link_to "Account", edit_user_registration_path, class: "btn "  %></li>
+    36:           <li>
+  
+app/views/layouts/application.html.erb:33:in `_app_views_layouts_application_html_erb___36159215104675173_47049860019320'
+Started GET "/users/sign_in" for ::1 at 2020-01-29 01:25:02 +0530
+Processing by Devise::SessionsController#new as HTML
+  Rendering /var/lib/gems/2.5.0/gems/devise-4.7.1/app/views/devise/sessions/new.html.erb within layouts/application
+  Rendered /var/lib/gems/2.5.0/gems/devise-4.7.1/app/views/devise/shared/_links.html.erb (2.1ms)
+  Rendered /var/lib/gems/2.5.0/gems/devise-4.7.1/app/views/devise/sessions/new.html.erb within layouts/application (12.8ms)
+Completed 500 Internal Server Error in 104ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (No route matches {:action=>"show", :controller=>"orders"}, missing required keys: [:id]):
+    30:     <%= link_to "Order Details", '#', id: "logo" %>
+    31:     <nav>
+    32:       <ul class="nav navbar-nav navbar-right">
+    33:         <li><%= link_to "Home",   order_path , class: "btn "%></li>
+    34:         <% if user_signed_in? %>
+    35:           <li><%= link_to "Account", edit_user_registration_path, class: "btn "  %></li>
+    36:           <li>
+  
+app/views/layouts/application.html.erb:33:in `_app_views_layouts_application_html_erb___36159215104675173_69845912422760'
+Started GET "/users/sign_in" for ::1 at 2020-01-29 01:25:35 +0530
+Processing by Devise::SessionsController#new as HTML
+  Rendering /var/lib/gems/2.5.0/gems/devise-4.7.1/app/views/devise/sessions/new.html.erb within layouts/application
+  Rendered /var/lib/gems/2.5.0/gems/devise-4.7.1/app/views/devise/shared/_links.html.erb (1.7ms)
+  Rendered /var/lib/gems/2.5.0/gems/devise-4.7.1/app/views/devise/sessions/new.html.erb within layouts/application (9.5ms)
+Completed 200 OK in 52ms (Views: 50.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for ::1 at 2020-01-29 01:25:42 +0530
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"hY1dviGwvE1YMiINZ3SJy9o5Wk4QhY8Omoy/M7vBfd8qzTcPjn2Z5ewHWCqYRPRwAH7vipRIBjgQQI87xbx0tQ==", "user"=>{"email"=>"akbhobhiya2000@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"1"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'akbhobhiya2000@gmail.com' ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+Completed 401 Unauthorized in 20ms (ActiveRecord: 0.6ms)
+
+
+Processing by Devise::SessionsController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"hY1dviGwvE1YMiINZ3SJy9o5Wk4QhY8Omoy/M7vBfd8qzTcPjn2Z5ewHWCqYRPRwAH7vipRIBjgQQI87xbx0tQ==", "user"=>{"email"=>"akbhobhiya2000@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"1"}, "commit"=>"Log in"}
+  Rendering /var/lib/gems/2.5.0/gems/devise-4.7.1/app/views/devise/sessions/new.html.erb within layouts/application
+  Rendered /var/lib/gems/2.5.0/gems/devise-4.7.1/app/views/devise/shared/_links.html.erb (1.3ms)
+  Rendered /var/lib/gems/2.5.0/gems/devise-4.7.1/app/views/devise/sessions/new.html.erb within layouts/application (5.8ms)
+Completed 200 OK in 267ms (Views: 39.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_up" for ::1 at 2020-01-29 01:25:46 +0530
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering /var/lib/gems/2.5.0/gems/devise-4.7.1/app/views/devise/registrations/new.html.erb within layouts/application
+  Rendered /var/lib/gems/2.5.0/gems/devise-4.7.1/app/views/devise/shared/_error_messages.html.erb (1.5ms)
+  Rendered /var/lib/gems/2.5.0/gems/devise-4.7.1/app/views/devise/shared/_links.html.erb (1.3ms)
+  Rendered /var/lib/gems/2.5.0/gems/devise-4.7.1/app/views/devise/registrations/new.html.erb within layouts/application (11.9ms)
+Completed 200 OK in 66ms (Views: 63.8ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for ::1 at 2020-01-29 01:25:58 +0530
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"fgmPQIeYZ0ohBNDFZjB8AKnXaWbtW5z05XVDVFFcNTXEaqDIaznXrbJLURwAGgcp7B+LQIK55x5oQhRr/1rwdA==", "user"=>{"email"=>"akbhobhiya2000@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'akbhobhiya2000@gmail.com' LIMIT 1[0m
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Create (24.6ms)[0m  [1m[32mINSERT INTO `users` (`email`, `encrypted_password`, `created_at`, `updated_at`) VALUES ('akbhobhiya2000@gmail.com', '$2a$11$cs7iMs7TT87ZHWzzMkU3Ruv4mJUuwJU3lTvQtLnXtl6VZInkWODf.', '2020-01-28 19:55:58', '2020-01-28 19:55:58')[0m
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+  [1m[35m (92.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+Redirected to http://localhost:3000/
+Completed 302 Found in 250ms (ActiveRecord: 117.4ms)
+
+
+Started GET "/" for ::1 at 2020-01-29 01:25:58 +0530
+Processing by OrdersController#index as HTML
+  [1m[36mUser Load (2.8ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+  Rendering orders/index.html.erb within layouts/application
+  Rendered orders/index.html.erb within layouts/application (3.0ms)
+Completed 500 Internal Server Error in 52ms (ActiveRecord: 4.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `each' for nil:NilClass):
+    15:   </thead>
+    16: 
+    17:   <tbody>
+    18:     <% @orders.each do |order| %>
+    19:       <tr>
+    20:         <td><%= order.Name %></td>
+    21:         <td><%= order.Description %></td>
+  
+app/views/orders/index.html.erb:18:in `_app_views_orders_index_html_erb___3927713348990319006_47049863081220'
+Started GET "/" for ::1 at 2020-01-29 01:29:36 +0530
+  [1m[35m (22.0ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+Processing by OrdersController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+  Rendering orders/index.html.erb within layouts/application
+  Rendered orders/index.html.erb within layouts/application (1.3ms)
+Completed 500 Internal Server Error in 128ms (ActiveRecord: 23.0ms)
+
+
+  
+SyntaxError (/home/ashok/shop/app/views/orders/index.html.erb:39: syntax error, unexpected keyword_ensure, expecting keyword_end
+          ensure
+          ^~~~~~
+/home/ashok/shop/app/views/orders/index.html.erb:41: syntax error, unexpected end-of-input, expecting keyword_end
+          end
+             ^):
+  
+app/views/orders/index.html.erb:39: syntax error, unexpected keyword_ensure, expecting keyword_end
+app/views/orders/index.html.erb:41: syntax error, unexpected end-of-input, expecting keyword_end
+Started GET "/" for ::1 at 2020-01-29 01:34:10 +0530
+Processing by OrdersController#index as HTML
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+  Rendering orders/index.html.erb within layouts/application
+  Rendered orders/index.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 389ms (Views: 384.6ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/orders/new" for ::1 at 2020-01-29 01:34:13 +0530
+Processing by OrdersController#new as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+  Rendering orders/new.html.erb within layouts/application
+  Rendered orders/_form.html.erb (52.4ms)
+  Rendered orders/new.html.erb within layouts/application (69.7ms)
+Completed 200 OK in 190ms (Views: 122.7ms | ActiveRecord: 1.4ms)
+
+
+Started POST "/orders" for ::1 at 2020-01-29 01:36:22 +0530
+Processing by OrdersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"fudDNYV7pzJVf2bynRBsFVL0EDiIVCLQriXZRgko4DG+fUyS+A/GKTK1FGcc2cGp92NPTfJns1tOVnwLePn0Kw==", "order"=>{"Name"=>"Apple", "image"=>#<ActionDispatch::Http::UploadedFile:0x00007f7f7d4cd688 @tempfile=#<Tempfile:/tmp/RackMultipart20200129-15371-1yzseyq.jpg>, @original_filename="apple.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"order[image]\"; filename=\"apple.jpg\"\r\nContent-Type: image/jpeg\r\n">, "Description"=>"This is a world's most popular apple.", "Age"=>"12", "Cost"=>"100", "Address"=>"NITK Surathkal,Karnataka"}, "commit"=>"Create Order"}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+Completed 500 Internal Server Error in 424ms (ActiveRecord: 0.8ms)
+
+
+  
+NameError (undefined local variable or method `current_use' for #<OrdersController:0x00007f7f7d4cdd90>
+Did you mean?  current_user):
+  
+app/controllers/orders_controller.rb:28:in `create'
+Started GET "/orders" for ::1 at 2020-01-29 01:41:37 +0530
+  [1m[35m (57.9ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+Processing by OrdersController#index as HTML
+  [1m[36mUser Load (11.9ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+  Rendering orders/index.html.erb within layouts/application
+  Rendered orders/index.html.erb within layouts/application (3.9ms)
+Completed 200 OK in 450ms (Views: 369.3ms | ActiveRecord: 15.1ms)
+
+
+Started GET "/orders/new" for ::1 at 2020-01-29 01:41:40 +0530
+Processing by OrdersController#new as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+  Rendering orders/new.html.erb within layouts/application
+  Rendered orders/_form.html.erb (26.6ms)
+  Rendered orders/new.html.erb within layouts/application (29.6ms)
+Completed 200 OK in 77ms (Views: 54.5ms | ActiveRecord: 2.7ms)
+
+
+Started POST "/orders" for ::1 at 2020-01-29 01:42:23 +0530
+Processing by OrdersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Vei++AUCdR5JqrFSOKtQGPjKSMZQYawPCh7LkXeO4m2VcrFfeHYUBS5gw8e5Yv2kXV0XsypSPYTqbW7cBl/2dw==", "order"=>{"Name"=>"Apple", "image"=>#<ActionDispatch::Http::UploadedFile:0x00007fcbe593d740 @tempfile=#<Tempfile:/tmp/RackMultipart20200129-16146-eo56z7.jpg>, @original_filename="apple.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"order[image]\"; filename=\"apple.jpg\"\r\nContent-Type: image/jpeg\r\n">, "Description"=>"This is the world's most popular apple ", "Age"=>"12", "Cost"=>"100", "Address"=>"NITK,Surathkal, Karnakata"}, "commit"=>"Create Order"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 0.7ms)
+
+
+  
+NoMethodError (undefined method `image' for nil:NilClass):
+  
+app/controllers/orders_controller.rb:28:in `create'
+Started POST "/orders" for ::1 at 2020-01-29 01:43:13 +0530
+Processing by OrdersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Vei++AUCdR5JqrFSOKtQGPjKSMZQYawPCh7LkXeO4m2VcrFfeHYUBS5gw8e5Yv2kXV0XsypSPYTqbW7cBl/2dw==", "order"=>{"Name"=>"Apple", "image"=>#<ActionDispatch::Http::UploadedFile:0x00007fcbe4b8c5d8 @tempfile=#<Tempfile:/tmp/RackMultipart20200129-16146-1z0q6j8.jpg>, @original_filename="apple.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"order[image]\"; filename=\"apple.jpg\"\r\nContent-Type: image/jpeg\r\n">, "Description"=>"This is the world's most popular apple ", "Age"=>"12", "Cost"=>"100", "Address"=>"NITK,Surathkal, Karnakata"}, "commit"=>"Create Order"}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+Completed 500 Internal Server Error in 23ms (ActiveRecord: 2.9ms)
+
+
+  
+NoMethodError (undefined method `image' for nil:NilClass):
+  
+app/controllers/orders_controller.rb:28:in `create'
+Started GET "/" for ::1 at 2020-01-29 22:06:10 +0530
+  [1m[35m (37.8ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+  [1m[35m (17.4ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+Processing by OrdersController#index as HTML
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+  Rendering orders/index.html.erb within layouts/application
+  Rendered orders/index.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 881ms (Views: 698.7ms | ActiveRecord: 82.2ms)
+
+
+Started GET "/orders/new" for ::1 at 2020-01-29 22:06:15 +0530
+Processing by OrdersController#new as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+  Rendering orders/new.html.erb within layouts/application
+  Rendered orders/_form.html.erb (86.2ms)
+  Rendered orders/new.html.erb within layouts/application (95.0ms)
+Completed 200 OK in 136ms (Views: 114.0ms | ActiveRecord: 3.0ms)
+
+
+Started POST "/orders" for ::1 at 2020-01-29 22:06:34 +0530
+Processing by OrdersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"AvMkolNXdFVe1rcw4OJ/EE8SXHpl3zlGzE1ps4uJwpbCaSsFLiMVTjkcxaVhK9Ks6oUDDx/sqM0sPsz++ljWjA==", "order"=>{"Name"=>"Apple", "image"=>#<ActionDispatch::Http::UploadedFile:0x00007f2e3004ead8 @tempfile=#<Tempfile:/tmp/RackMultipart20200129-11897-1ll3m3k.jpg>, @original_filename="apple.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"order[image]\"; filename=\"apple.jpg\"\r\nContent-Type: image/jpeg\r\n">, "Description"=>"sdd", "Age"=>"12", "Cost"=>"222", "Address"=>"fdsf"}, "commit"=>"Create Order"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 0.5ms)
+
+
+  
+NoMethodError (undefined method `image' for nil:NilClass):
+  
+app/controllers/orders_controller.rb:28:in `create'
+Started POST "/orders" for ::1 at 2020-01-29 22:11:11 +0530
+  [1m[35m (0.4ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+Processing by OrdersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"AvMkolNXdFVe1rcw4OJ/EE8SXHpl3zlGzE1ps4uJwpbCaSsFLiMVTjkcxaVhK9Ks6oUDDx/sqM0sPsz++ljWjA==", "order"=>{"Name"=>"Apple", "image"=>#<ActionDispatch::Http::UploadedFile:0x00005587a1c6e138 @tempfile=#<Tempfile:/tmp/RackMultipart20200129-12289-1wtqq5v.jpg>, @original_filename="apple.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"order[image]\"; filename=\"apple.jpg\"\r\nContent-Type: image/jpeg\r\n">, "Description"=>"sdd", "Age"=>"12", "Cost"=>"222", "Address"=>"fdsf"}, "commit"=>"Create Order"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+Completed 500 Internal Server Error in 35ms (ActiveRecord: 2.6ms)
+
+
+  
+NoMethodError (undefined method `image' for nil:NilClass):
+  
+app/controllers/orders_controller.rb:28:in `create'
+Started POST "/orders" for ::1 at 2020-01-29 22:11:17 +0530
+Processing by OrdersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"XB+57DKaBTAn69c+GsBl31tpcqdKDZW2fnd7iJZ6sHnzX9NdnVcgmJPerRnl8BhkgS7HY87AHID0u0uA6Ae5Ew==", "order"=>{"Name"=>"Apple", "image"=>#<ActionDispatch::Http::UploadedFile:0x00005587a1fa5068 @tempfile=#<Tempfile:/tmp/RackMultipart20200129-12289-xjf5av.jpg>, @original_filename="apple.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"order[image]\"; filename=\"apple.jpg\"\r\nContent-Type: image/jpeg\r\n">, "Description"=>"sdd", "Age"=>"12", "Cost"=>"222", "Address"=>"fdsf"}, "commit"=>"Create Order"}
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+Completed 500 Internal Server Error in 9ms (ActiveRecord: 1.4ms)
+
+
+  
+NoMethodError (undefined method `image' for nil:NilClass):
+  
+app/controllers/orders_controller.rb:28:in `create'
+Started POST "/orders" for ::1 at 2020-01-29 22:12:35 +0530
+Processing by OrdersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"XB+57DKaBTAn69c+GsBl31tpcqdKDZW2fnd7iJZ6sHnzX9NdnVcgmJPerRnl8BhkgS7HY87AHID0u0uA6Ae5Ew==", "order"=>{"Name"=>"Apple", "image"=>#<ActionDispatch::Http::UploadedFile:0x00005587a1fc6718 @tempfile=#<Tempfile:/tmp/RackMultipart20200129-12289-rsntcu.jpg>, @original_filename="apple.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"order[image]\"; filename=\"apple.jpg\"\r\nContent-Type: image/jpeg\r\n">, "Description"=>"sdd", "Age"=>"12", "Cost"=>"222", "Address"=>"fdsf"}, "commit"=>"Create Order"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+Completed 500 Internal Server Error in 27ms (ActiveRecord: 3.2ms)
+
+
+  
+NoMethodError (undefined method `image' for nil:NilClass):
+  
+app/controllers/orders_controller.rb:28:in `create'
+Started POST "/orders" for ::1 at 2020-01-29 22:13:36 +0530
+Processing by OrdersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"XB+57DKaBTAn69c+GsBl31tpcqdKDZW2fnd7iJZ6sHnzX9NdnVcgmJPerRnl8BhkgS7HY87AHID0u0uA6Ae5Ew==", "order"=>{"Name"=>"Apple", "image"=>#<ActionDispatch::Http::UploadedFile:0x00005587a1e75f08 @tempfile=#<Tempfile:/tmp/RackMultipart20200129-12289-wfud2n.jpg>, @original_filename="apple.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"order[image]\"; filename=\"apple.jpg\"\r\nContent-Type: image/jpeg\r\n">, "Description"=>"sdd", "Age"=>"12", "Cost"=>"222", "Address"=>"fdsf"}, "commit"=>"Create Order"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+Completed 500 Internal Server Error in 28ms (ActiveRecord: 3.2ms)
+
+
+  
+NoMethodError (undefined method `image' for nil:NilClass):
+  
+app/controllers/orders_controller.rb:28:in `create'
+Started POST "/orders" for ::1 at 2020-01-29 22:14:29 +0530
+Processing by OrdersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"XB+57DKaBTAn69c+GsBl31tpcqdKDZW2fnd7iJZ6sHnzX9NdnVcgmJPerRnl8BhkgS7HY87AHID0u0uA6Ae5Ew==", "order"=>{"Name"=>"Apple", "image"=>#<ActionDispatch::Http::UploadedFile:0x00005587a1adf998 @tempfile=#<Tempfile:/tmp/RackMultipart20200129-12289-18r2pag.jpg>, @original_filename="apple.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"order[image]\"; filename=\"apple.jpg\"\r\nContent-Type: image/jpeg\r\n">, "Description"=>"sdd", "Age"=>"12", "Cost"=>"222", "Address"=>"fdsf"}, "commit"=>"Create Order"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+Completed 500 Internal Server Error in 27ms (ActiveRecord: 2.2ms)
+
+
+  
+NoMethodError (undefined method `image' for nil:NilClass):
+  
+app/controllers/orders_controller.rb:28:in `create'
+Started POST "/orders" for ::1 at 2020-01-29 22:15:03 +0530
+Processing by OrdersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"XB+57DKaBTAn69c+GsBl31tpcqdKDZW2fnd7iJZ6sHnzX9NdnVcgmJPerRnl8BhkgS7HY87AHID0u0uA6Ae5Ew==", "order"=>{"Name"=>"Apple", "image"=>#<ActionDispatch::Http::UploadedFile:0x00005587a1698a88 @tempfile=#<Tempfile:/tmp/RackMultipart20200129-12289-d83eqy.jpg>, @original_filename="apple.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"order[image]\"; filename=\"apple.jpg\"\r\nContent-Type: image/jpeg\r\n">, "Description"=>"sdd", "Age"=>"12", "Cost"=>"222", "Address"=>"fdsf"}, "commit"=>"Create Order"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+[36m  Disk Storage (20.5ms) [0m[32mUploaded file to key: JiME45Y5qcMWZTzCP9XnXF5o (checksum: /9V0WnCskf5ZA6r8TP2M9g==)[0m
+  [1m[35m (1.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/orders_controller.rb:29
+  [1m[36mActiveStorage::Blob Create (17.2ms)[0m  [1m[32mINSERT INTO `active_storage_blobs` (`key`, `filename`, `content_type`, `metadata`, `byte_size`, `checksum`, `created_at`) VALUES ('JiME45Y5qcMWZTzCP9XnXF5o', 'apple.jpg', 'image/jpeg', '{\"identified\":true}', 24766, '/9V0WnCskf5ZA6r8TP2M9g==', '2020-01-29 16:45:03')[0m
+  ↳ app/controllers/orders_controller.rb:29
+  [1m[35m (84.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/orders_controller.rb:29
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/orders_controller.rb:29
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/orders_controller.rb:29
+Completed 500 Internal Server Error in 838ms (ActiveRecord: 140.5ms)
+
+
+  
+NameError (undefined local variable or method `current_use' for #<OrdersController:0x00005587a169b288>
+Did you mean?  current_user):
+  
+app/controllers/orders_controller.rb:30:in `create'
+Started POST "/orders" for ::1 at 2020-01-29 22:15:19 +0530
+Processing by OrdersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"XB+57DKaBTAn69c+GsBl31tpcqdKDZW2fnd7iJZ6sHnzX9NdnVcgmJPerRnl8BhkgS7HY87AHID0u0uA6Ae5Ew==", "order"=>{"Name"=>"Apple", "image"=>#<ActionDispatch::Http::UploadedFile:0x00005587a1cc62e8 @tempfile=#<Tempfile:/tmp/RackMultipart20200129-12289-18tl0n2.jpg>, @original_filename="apple.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"order[image]\"; filename=\"apple.jpg\"\r\nContent-Type: image/jpeg\r\n">, "Description"=>"sdd", "Age"=>"12", "Cost"=>"222", "Address"=>"fdsf"}, "commit"=>"Create Order"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+[36m  Disk Storage (2.9ms) [0m[32mUploaded file to key: gq3t5QgPgfaosuj1EopdnueS (checksum: /9V0WnCskf5ZA6r8TP2M9g==)[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/orders_controller.rb:29
+  [1m[36mActiveStorage::Blob Create (1.7ms)[0m  [1m[32mINSERT INTO `active_storage_blobs` (`key`, `filename`, `content_type`, `metadata`, `byte_size`, `checksum`, `created_at`) VALUES ('gq3t5QgPgfaosuj1EopdnueS', 'apple.jpg', 'image/jpeg', '{\"identified\":true}', 24766, '/9V0WnCskf5ZA6r8TP2M9g==', '2020-01-29 16:45:19')[0m
+  ↳ app/controllers/orders_controller.rb:29
+  [1m[35m (89.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/orders_controller.rb:29
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/orders_controller.rb:29
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/orders_controller.rb:29
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/orders_controller.rb:32
+  [1m[35m (0.4ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/orders_controller.rb:32
+  Rendering orders/new.html.erb within layouts/application
+  Rendered orders/_form.html.erb (25.6ms)
+  Rendered orders/new.html.erb within layouts/application (26.9ms)
+Completed 200 OK in 584ms (Views: 355.3ms | ActiveRecord: 133.4ms)
+
+
+Started POST "/orders" for ::1 at 2020-01-29 22:15:34 +0530
+Processing by OrdersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"BkTICk47XSx3KxN+TE9HlMmjNEjYnFQuq5Ndxa3cRQCpBKK74fZ4hMMeaVmzfzovE+SBjFxR3RghX23N06FMag==", "order"=>{"Name"=>"Apple", "Description"=>"sdd", "Age"=>"12", "Cost"=>"222", "Address"=>"fdsf"}, "commit"=>"Create Order"}
+  [1m[36mUser Load (4.5ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/orders_controller.rb:32
+  [1m[35m (2.0ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/orders_controller.rb:32
+  Rendering orders/new.html.erb within layouts/application
+  Rendered orders/_form.html.erb (8.3ms)
+  Rendered orders/new.html.erb within layouts/application (12.6ms)
+Completed 200 OK in 55ms (Views: 40.7ms | ActiveRecord: 6.8ms)
+
+
+Started POST "/orders" for ::1 at 2020-01-29 22:15:36 +0530
+Processing by OrdersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"0oETn3aONjrDZsVGRRLJ/EAU+Xt0+1RTKWgWX8kB7PN9wXku2UMTkndTv2G6IrRHmlNMv/A23WWjpCZXt3zlmQ==", "order"=>{"Name"=>"Apple", "Description"=>"sdd", "Age"=>"12", "Cost"=>"222", "Address"=>"fdsf"}, "commit"=>"Create Order"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+  [1m[35m (1.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/orders_controller.rb:32
+  [1m[35m (1.8ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/orders_controller.rb:32
+  Rendering orders/new.html.erb within layouts/application
+  Rendered orders/_form.html.erb (6.2ms)
+  Rendered orders/new.html.erb within layouts/application (8.3ms)
+Completed 200 OK in 49ms (Views: 39.4ms | ActiveRecord: 3.5ms)
+
+
+Started GET "/orders" for ::1 at 2020-01-29 22:15:45 +0530
+Processing by OrdersController#index as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+  Rendering orders/index.html.erb within layouts/application
+  Rendered orders/index.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 31ms (Views: 26.0ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/orders/1" for ::1 at 2020-01-29 22:15:51 +0530
+Processing by OrdersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mOrder Load (1.9ms)[0m  [1m[34mSELECT  `orders`.* FROM `orders` WHERE `orders`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/orders_controller.rb:72
+Completed 404 Not Found in 7ms (ActiveRecord: 2.4ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Order with 'id'=1):
+  
+app/controllers/orders_controller.rb:72:in `set_order'
+Started GET "/orders/2" for ::1 at 2020-01-29 22:15:54 +0530
+Processing by OrdersController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (2.5ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mOrder Load (0.5ms)[0m  [1m[34mSELECT  `orders`.* FROM `orders` WHERE `orders`.`id` = 2 LIMIT 1[0m
+  ↳ app/controllers/orders_controller.rb:72
+Completed 404 Not Found in 6ms (ActiveRecord: 3.0ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Order with 'id'=2):
+  
+app/controllers/orders_controller.rb:72:in `set_order'
+Started GET "/orders/3" for ::1 at 2020-01-29 22:16:02 +0530
+Processing by OrdersController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mOrder Load (1.6ms)[0m  [1m[34mSELECT  `orders`.* FROM `orders` WHERE `orders`.`id` = 3 LIMIT 1[0m
+  ↳ app/controllers/orders_controller.rb:72
+Completed 404 Not Found in 6ms (ActiveRecord: 2.1ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Order with 'id'=3):
+  
+app/controllers/orders_controller.rb:72:in `set_order'
+Started GET "/orders" for ::1 at 2020-01-29 22:16:06 +0530
+Processing by OrdersController#index as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+  Rendering orders/index.html.erb within layouts/application
+  Rendered orders/index.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 31ms (Views: 26.9ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/orders/new" for ::1 at 2020-01-29 22:16:10 +0530
+Processing by OrdersController#new as HTML
+  [1m[36mUser Load (2.1ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+  Rendering orders/new.html.erb within layouts/application
+  Rendered orders/_form.html.erb (8.8ms)
+  Rendered orders/new.html.erb within layouts/application (10.8ms)
+Completed 200 OK in 65ms (Views: 58.7ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/" for ::1 at 2020-01-29 22:16:21 +0530
+Processing by OrdersController#index as HTML
+Completed 401 Unauthorized in 3ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2020-01-29 22:16:21 +0530
+Processing by Devise::SessionsController#new as HTML
+  Rendering /var/lib/gems/2.5.0/gems/devise-4.7.1/app/views/devise/sessions/new.html.erb within layouts/application
+  Rendered /var/lib/gems/2.5.0/gems/devise-4.7.1/app/views/devise/shared/_links.html.erb (5.4ms)
+  Rendered /var/lib/gems/2.5.0/gems/devise-4.7.1/app/views/devise/sessions/new.html.erb within layouts/application (36.3ms)
+Completed 200 OK in 88ms (Views: 72.9ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for ::1 at 2020-01-29 22:16:32 +0530
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"06Df7sCMjkQhxKrOHOJKnfJQzmCm2TUL17t/jUIAOUNihVakplpjk4gbqsFMl+93945xvtzl4mYknGY8fuBAwg==", "user"=>{"email"=>"akbhobhiya2000@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'akbhobhiya2000@gmail.com' ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+Redirected to http://localhost:3000/
+Completed 302 Found in 171ms (ActiveRecord: 1.4ms)
+
+
+Started GET "/" for ::1 at 2020-01-29 22:16:32 +0530
+Processing by OrdersController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+  Rendering orders/index.html.erb within layouts/application
+  Rendered orders/index.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 39ms (Views: 32.4ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/orders/new" for ::1 at 2020-01-29 22:16:35 +0530
+Processing by OrdersController#new as HTML
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+  Rendering orders/new.html.erb within layouts/application
+  Rendered orders/_form.html.erb (6.3ms)
+  Rendered orders/new.html.erb within layouts/application (9.1ms)
+Completed 200 OK in 52ms (Views: 46.6ms | ActiveRecord: 1.1ms)
+
+
+Started POST "/orders" for ::1 at 2020-01-29 22:16:51 +0530
+Processing by OrdersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"NAqq7Hs2bsOKRobetJ8NfCQEq2tVEc6sWoNg61q1IQK969vM9rwgBCbwsIOOjiZwIYwZwwPFaC9CsKP0FqpcxQ==", "order"=>{"Name"=>"Apple", "image"=>#<ActionDispatch::Http::UploadedFile:0x00007f2abc5be8a0 @tempfile=#<Tempfile:/tmp/RackMultipart20200129-12289-1h3zgkc.jpeg>, @original_filename="download.jpeg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"order[image]\"; filename=\"download.jpeg\"\r\nContent-Type: image/jpeg\r\n">, "Description"=>"rf34r", "Age"=>"423", "Cost"=>"123", "Address"=>"dfvbv"}, "commit"=>"Create Order"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+[36m  Disk Storage (2.6ms) [0m[32mUploaded file to key: RiaubYiv2DoXcWknT2YLz9ft (checksum: uvS2hC/eAzE89DbZOCtTGQ==)[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/orders_controller.rb:29
+  [1m[36mActiveStorage::Blob Create (0.5ms)[0m  [1m[32mINSERT INTO `active_storage_blobs` (`key`, `filename`, `content_type`, `metadata`, `byte_size`, `checksum`, `created_at`) VALUES ('RiaubYiv2DoXcWknT2YLz9ft', 'download.jpeg', 'image/jpeg', '{\"identified\":true}', 7962, 'uvS2hC/eAzE89DbZOCtTGQ==', '2020-01-29 16:46:51')[0m
+  ↳ app/controllers/orders_controller.rb:29
+  [1m[35m (40.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/orders_controller.rb:29
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/orders_controller.rb:29
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/orders_controller.rb:29
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/orders_controller.rb:32
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/orders_controller.rb:32
+  Rendering orders/new.html.erb within layouts/application
+  Rendered orders/_form.html.erb (8.7ms)
+  Rendered orders/new.html.erb within layouts/application (10.5ms)
+Completed 200 OK in 132ms (Views: 33.3ms | ActiveRecord: 42.5ms)
+
+
+Started GET "/orders" for ::1 at 2020-01-29 22:17:11 +0530
+Processing by OrdersController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+  Rendering orders/index.html.erb within layouts/application
+  Rendered orders/index.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 74ms (Views: 35.9ms | ActiveRecord: 5.9ms)
+
+
+Started GET "/orders/new" for ::1 at 2020-01-29 22:17:13 +0530
+Processing by OrdersController#new as HTML
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+  Rendering orders/new.html.erb within layouts/application
+  Rendered orders/_form.html.erb (6.1ms)
+  Rendered orders/new.html.erb within layouts/application (8.4ms)
+Completed 200 OK in 52ms (Views: 29.5ms | ActiveRecord: 1.8ms)
+
+
+Started POST "/orders" for ::1 at 2020-01-29 22:17:23 +0530
+Processing by OrdersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"qE8kuW10xi9ItAOTEzcr9hzJXI9EjeXcvlYSKWz/dFshrlWZ4P6I6OQCNc4pJgD6GUHuJxJZQ1+mZdE2IOAJnA==", "order"=>{"Name"=>"Apple", "image"=>#<ActionDispatch::Http::UploadedFile:0x00007f2ab9a972a8 @tempfile=#<Tempfile:/tmp/RackMultipart20200129-12289-a49fnu.jpg>, @original_filename="apple.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"order[image]\"; filename=\"apple.jpg\"\r\nContent-Type: image/jpeg\r\n">, "Description"=>"ded", "Age"=>"23", "Cost"=>"232", "Address"=>"2ewf"}, "commit"=>"Create Order"}
+  [1m[36mUser Load (1.7ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+[36m  Disk Storage (15.8ms) [0m[32mUploaded file to key: 3qsW5UTEJkYuBLRdS3L1nX6Y (checksum: /9V0WnCskf5ZA6r8TP2M9g==)[0m
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/orders_controller.rb:29
+  [1m[36mActiveStorage::Blob Create (1.1ms)[0m  [1m[32mINSERT INTO `active_storage_blobs` (`key`, `filename`, `content_type`, `metadata`, `byte_size`, `checksum`, `created_at`) VALUES ('3qsW5UTEJkYuBLRdS3L1nX6Y', 'apple.jpg', 'image/jpeg', '{\"identified\":true}', 24766, '/9V0WnCskf5ZA6r8TP2M9g==', '2020-01-29 16:47:23')[0m
+  ↳ app/controllers/orders_controller.rb:29
+  [1m[35m (96.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/orders_controller.rb:29
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/orders_controller.rb:29
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/orders_controller.rb:29
+Completed 500 Internal Server Error in 514ms (ActiveRecord: 145.8ms)
+
+
+  
+NameError (undefined local variable or method `current_use' for #<OrdersController:0x00007f2ab9a97938>
+Did you mean?  current_user):
+  
+app/controllers/orders_controller.rb:30:in `create'
+Started POST "/orders" for ::1 at 2020-01-29 22:17:47 +0530
+Processing by OrdersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"qE8kuW10xi9ItAOTEzcr9hzJXI9EjeXcvlYSKWz/dFshrlWZ4P6I6OQCNc4pJgD6GUHuJxJZQ1+mZdE2IOAJnA==", "order"=>{"Name"=>"Apple", "image"=>#<ActionDispatch::Http::UploadedFile:0x00007f2ad9c72828 @tempfile=#<Tempfile:/tmp/RackMultipart20200129-12289-jvnlur.jpg>, @original_filename="apple.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"order[image]\"; filename=\"apple.jpg\"\r\nContent-Type: image/jpeg\r\n">, "Description"=>"ded", "Age"=>"23", "Cost"=>"232", "Address"=>"2ewf"}, "commit"=>"Create Order"}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+[36m  Disk Storage (2.1ms) [0m[32mUploaded file to key: xJaKrxsJdjEhV7kcLLdcKoju (checksum: /9V0WnCskf5ZA6r8TP2M9g==)[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/orders_controller.rb:29
+  [1m[36mActiveStorage::Blob Create (1.4ms)[0m  [1m[32mINSERT INTO `active_storage_blobs` (`key`, `filename`, `content_type`, `metadata`, `byte_size`, `checksum`, `created_at`) VALUES ('xJaKrxsJdjEhV7kcLLdcKoju', 'apple.jpg', 'image/jpeg', '{\"identified\":true}', 24766, '/9V0WnCskf5ZA6r8TP2M9g==', '2020-01-29 16:47:47')[0m
+  ↳ app/controllers/orders_controller.rb:29
+  [1m[35m (38.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/orders_controller.rb:29
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/orders_controller.rb:29
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/orders_controller.rb:29
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/orders_controller.rb:32
+  [1m[36mOrder Create (0.6ms)[0m  [1m[32mINSERT INTO `orders` (`Name`, `Description`, `Age`, `Cost`, `Address`, `created_at`, `updated_at`, `user_id`) VALUES ('Apple', 'ded', 23, 232.0, '2ewf', '2020-01-29 16:47:47', '2020-01-29 16:47:47', 1)[0m
+  ↳ app/controllers/orders_controller.rb:32
+  [1m[36mActiveStorage::Attachment Create (0.6ms)[0m  [1m[32mINSERT INTO `active_storage_attachments` (`name`, `record_type`, `record_id`, `blob_id`, `created_at`) VALUES ('image', 'Order', 1, 5, '2020-01-29 16:47:47')[0m
+  ↳ app/controllers/orders_controller.rb:32
+  [1m[36mOrder Update (15.4ms)[0m  [1m[33mUPDATE `orders` SET `updated_at` = '2020-01-29 16:47:47' WHERE `orders`.`id` = 1[0m
+  ↳ app/controllers/orders_controller.rb:32
+  [1m[35m (37.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/orders_controller.rb:32
+[ActiveJob] Enqueued ActiveStorage::AnalyzeJob (Job ID: d4d1ee5c-3d31-4b3f-964e-c9b2640304e9) to Async(default) with arguments: #<GlobalID:0x00007f2ad8fb60f8 @uri=#<URI::GID gid://shop/ActiveStorage::Blob/5>>
+Redirected to http://localhost:3000/orders/1
+Completed 302 Found in 324ms (ActiveRecord: 104.8ms)
+
+
+Started GET "/orders/1" for ::1 at 2020-01-29 22:17:47 +0530
+Processing by OrdersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mActiveStorage::Blob Load (2.2ms)[0m  [1m[34mSELECT  `active_storage_blobs`.* FROM `active_storage_blobs` WHERE `active_storage_blobs`.`id` = 5 LIMIT 1[0m
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [d4d1ee5c-3d31-4b3f-964e-c9b2640304e9] Performing ActiveStorage::AnalyzeJob (Job ID: d4d1ee5c-3d31-4b3f-964e-c9b2640304e9) from Async(default) with arguments: #<GlobalID:0x00007f2acc024b78 @uri=#<URI::GID gid://shop/ActiveStorage::Blob/5>>
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+[ActiveJob] [ActiveStorage::AnalyzeJob] [d4d1ee5c-3d31-4b3f-964e-c9b2640304e9] [36m  Disk Storage (0.3ms) [0m[34mDownloaded file from key: xJaKrxsJdjEhV7kcLLdcKoju[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [d4d1ee5c-3d31-4b3f-964e-c9b2640304e9] Skipping image analysis because the mini_magick gem isn't installed
+  [1m[36mOrder Load (1.1ms)[0m  [1m[34mSELECT  `orders`.* FROM `orders` WHERE `orders`.`id` = 1 LIMIT 1[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [d4d1ee5c-3d31-4b3f-964e-c9b2640304e9]   [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/orders_controller.rb:72
+[ActiveJob] [ActiveStorage::AnalyzeJob] [d4d1ee5c-3d31-4b3f-964e-c9b2640304e9]   ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+[ActiveJob] [ActiveStorage::AnalyzeJob] [d4d1ee5c-3d31-4b3f-964e-c9b2640304e9]   [1m[36mActiveStorage::Blob Update (2.0ms)[0m  [1m[33mUPDATE `active_storage_blobs` SET `metadata` = '{\"identified\":true,\"analyzed\":true}' WHERE `active_storage_blobs`.`id` = 5[0m
+  Rendering orders/show.html.erb within layouts/application
+[ActiveJob] [ActiveStorage::AnalyzeJob] [d4d1ee5c-3d31-4b3f-964e-c9b2640304e9]   ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+[ActiveJob] [ActiveStorage::AnalyzeJob] [d4d1ee5c-3d31-4b3f-964e-c9b2640304e9]   [1m[35m (30.7ms)[0m  [1m[35mCOMMIT[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [d4d1ee5c-3d31-4b3f-964e-c9b2640304e9]   ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+[ActiveJob] [ActiveStorage::AnalyzeJob] [d4d1ee5c-3d31-4b3f-964e-c9b2640304e9] Performed ActiveStorage::AnalyzeJob (Job ID: d4d1ee5c-3d31-4b3f-964e-c9b2640304e9) from Async(default) in 96.14ms
+  [1m[36mActiveStorage::Attachment Load (1.4ms)[0m  [1m[34mSELECT  `active_storage_attachments`.* FROM `active_storage_attachments` WHERE `active_storage_attachments`.`record_id` = 1 AND `active_storage_attachments`.`record_type` = 'Order' AND `active_storage_attachments`.`name` = 'image' LIMIT 1[0m
+  ↳ app/views/orders/show.html.erb:9
+  [1m[36mActiveStorage::Blob Load (0.5ms)[0m  [1m[34mSELECT  `active_storage_blobs`.* FROM `active_storage_blobs` WHERE `active_storage_blobs`.`id` = 5 LIMIT 1[0m
+  ↳ app/views/orders/show.html.erb:9
+  Rendered orders/show.html.erb within layouts/application (70.9ms)
+Completed 200 OK in 210ms (Views: 98.6ms | ActiveRecord: 13.0ms)
+
+
+Started GET "/rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBDZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--bf7bb60adfbcd24e17e64832a9568ca4e172496e/apple.jpg" for ::1 at 2020-01-29 22:17:48 +0530
+Processing by ActiveStorage::BlobsController#show as JPEG
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBDZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--bf7bb60adfbcd24e17e64832a9568ca4e172496e", "filename"=>"apple"}
+  [1m[36mActiveStorage::Blob Load (0.8ms)[0m  [1m[34mSELECT  `active_storage_blobs`.* FROM `active_storage_blobs` WHERE `active_storage_blobs`.`id` = 5 LIMIT 1[0m
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+[36m  Disk Storage (5.2ms) [0m[34mGenerated URL for file at key: xJaKrxsJdjEhV7kcLLdcKoju (http://localhost:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWRlRXBoUzNKNGMwcGtha1ZvVmpkclkweE1aR05MYjJwMUJqb0dSVlE2RUdScGMzQnZjMmwwYVc5dVNTSTlhVzVzYVc1bE95Qm1hV3hsYm1GdFpUMGlZWEJ3YkdVdWFuQm5JanNnWm1sc1pXNWhiV1VxUFZWVVJpMDRKeWRoY0hCc1pTNXFjR2NHT3daVU9oRmpiMjUwWlc1MFgzUjVjR1ZKSWc5cGJXRm5aUzlxY0dWbkJqc0dWQT09IiwiZXhwIjoiMjAyMC0wMS0yOVQxNjo1Mjo0OC4wNDZaIiwicHVyIjoiYmxvYl9rZXkifX0=--1dd5db5940e9649378c56a61efb0032124566b80/apple.jpg?content_type=image%2Fjpeg&disposition=inline%3B+filename%3D%22apple.jpg%22%3B+filename%2A%3DUTF-8%27%27apple.jpg)[0m
+Redirected to http://localhost:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWRlRXBoUzNKNGMwcGtha1ZvVmpkclkweE1aR05MYjJwMUJqb0dSVlE2RUdScGMzQnZjMmwwYVc5dVNTSTlhVzVzYVc1bE95Qm1hV3hsYm1GdFpUMGlZWEJ3YkdVdWFuQm5JanNnWm1sc1pXNWhiV1VxUFZWVVJpMDRKeWRoY0hCc1pTNXFjR2NHT3daVU9oRmpiMjUwWlc1MFgzUjVjR1ZKSWc5cGJXRm5aUzlxY0dWbkJqc0dWQT09IiwiZXhwIjoiMjAyMC0wMS0yOVQxNjo1Mjo0OC4wNDZaIiwicHVyIjoiYmxvYl9rZXkifX0=--1dd5db5940e9649378c56a61efb0032124566b80/apple.jpg?content_type=image%2Fjpeg&disposition=inline%3B+filename%3D%22apple.jpg%22%3B+filename%2A%3DUTF-8%27%27apple.jpg
+Completed 302 Found in 15ms (ActiveRecord: 0.8ms)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWRlRXBoUzNKNGMwcGtha1ZvVmpkclkweE1aR05MYjJwMUJqb0dSVlE2RUdScGMzQnZjMmwwYVc5dVNTSTlhVzVzYVc1bE95Qm1hV3hsYm1GdFpUMGlZWEJ3YkdVdWFuQm5JanNnWm1sc1pXNWhiV1VxUFZWVVJpMDRKeWRoY0hCc1pTNXFjR2NHT3daVU9oRmpiMjUwWlc1MFgzUjVjR1ZKSWc5cGJXRm5aUzlxY0dWbkJqc0dWQT09IiwiZXhwIjoiMjAyMC0wMS0yOVQxNjo1Mjo0OC4wNDZaIiwicHVyIjoiYmxvYl9rZXkifX0=--1dd5db5940e9649378c56a61efb0032124566b80/apple.jpg?content_type=image%2Fjpeg&disposition=inline%3B+filename%3D%22apple.jpg%22%3B+filename%2A%3DUTF-8%27%27apple.jpg" for ::1 at 2020-01-29 22:17:48 +0530
+Processing by ActiveStorage::DiskController#show as JPEG
+  Parameters: {"content_type"=>"image/jpeg", "disposition"=>"inline; filename=\"apple.jpg\"; filename*=UTF-8''apple.jpg", "encoded_key"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWRlRXBoUzNKNGMwcGtha1ZvVmpkclkweE1aR05MYjJwMUJqb0dSVlE2RUdScGMzQnZjMmwwYVc5dVNTSTlhVzVzYVc1bE95Qm1hV3hsYm1GdFpUMGlZWEJ3YkdVdWFuQm5JanNnWm1sc1pXNWhiV1VxUFZWVVJpMDRKeWRoY0hCc1pTNXFjR2NHT3daVU9oRmpiMjUwWlc1MFgzUjVjR1ZKSWc5cGJXRm5aUzlxY0dWbkJqc0dWQT09IiwiZXhwIjoiMjAyMC0wMS0yOVQxNjo1Mjo0OC4wNDZaIiwicHVyIjoiYmxvYl9rZXkifX0=--1dd5db5940e9649378c56a61efb0032124566b80", "filename"=>"apple"}
+Completed 200 OK in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/orders" for ::1 at 2020-01-29 22:17:53 +0530
+Processing by OrdersController#index as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+  Rendering orders/index.html.erb within layouts/application
+  Rendered orders/index.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 27ms (Views: 20.2ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/orders/new" for ::1 at 2020-01-29 22:17:55 +0530
+Processing by OrdersController#new as HTML
+  [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+  Rendering orders/new.html.erb within layouts/application
+  Rendered orders/_form.html.erb (9.4ms)
+  Rendered orders/new.html.erb within layouts/application (11.4ms)
+Completed 200 OK in 50ms (Views: 44.7ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/orders" for ::1 at 2020-01-29 22:17:59 +0530
+Processing by OrdersController#index as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+  Rendering orders/index.html.erb within layouts/application
+  Rendered orders/index.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 49ms (Views: 45.1ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/orders" for ::1 at 2020-01-29 22:18:03 +0530
+Processing by OrdersController#index as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+  Rendering orders/index.html.erb within layouts/application
+  Rendered orders/index.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 37ms (Views: 33.2ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/orders/new" for ::1 at 2020-01-29 22:18:05 +0530
+Processing by OrdersController#new as HTML
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+  Rendering orders/new.html.erb within layouts/application
+  Rendered orders/_form.html.erb (14.1ms)
+  Rendered orders/new.html.erb within layouts/application (16.1ms)
+Completed 200 OK in 44ms (Views: 39.3ms | ActiveRecord: 1.2ms)
+
+
+Started POST "/orders" for ::1 at 2020-01-29 22:18:17 +0530
+Processing by OrdersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"LVwWYB7isHqTzydNYiikl7LhHJWd6nL6BVneqOlcieKkvWdAk2j+vT95ERBYOY+bt2muPcs+1Hkdah23pUP0JQ==", "order"=>{"Name"=>"Apple", "image"=>#<ActionDispatch::Http::UploadedFile:0x00007f2ab9a95020 @tempfile=#<Tempfile:/tmp/RackMultipart20200129-12289-1uno161.jpeg>, @original_filename="download.jpeg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"order[image]\"; filename=\"download.jpeg\"\r\nContent-Type: image/jpeg\r\n">, "Description"=>"ded", "Age"=>"23", "Cost"=>"32333333333333", "Address"=>"cdcef"}, "commit"=>"Create Order"}
+  [1m[36mUser Load (2.1ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+[36m  Disk Storage (20.7ms) [0m[32mUploaded file to key: VohEUZh1etUJDUFdzQRTVoVT (checksum: uvS2hC/eAzE89DbZOCtTGQ==)[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/orders_controller.rb:29
+  [1m[36mActiveStorage::Blob Create (3.5ms)[0m  [1m[32mINSERT INTO `active_storage_blobs` (`key`, `filename`, `content_type`, `metadata`, `byte_size`, `checksum`, `created_at`) VALUES ('VohEUZh1etUJDUFdzQRTVoVT', 'download.jpeg', 'image/jpeg', '{\"identified\":true}', 7962, 'uvS2hC/eAzE89DbZOCtTGQ==', '2020-01-29 16:48:17')[0m
+  ↳ app/controllers/orders_controller.rb:29
+  [1m[35m (64.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/orders_controller.rb:29
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/orders_controller.rb:29
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/orders_controller.rb:29
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/orders_controller.rb:32
+  [1m[36mOrder Create (26.7ms)[0m  [1m[32mINSERT INTO `orders` (`Name`, `Description`, `Age`, `Cost`, `Address`, `created_at`, `updated_at`, `user_id`) VALUES ('Apple', 'ded', 23, 32333333333333.0, 'cdcef', '2020-01-29 16:48:17', '2020-01-29 16:48:17', 1)[0m
+  ↳ app/controllers/orders_controller.rb:32
+  [1m[36mActiveStorage::Attachment Create (75.6ms)[0m  [1m[32mINSERT INTO `active_storage_attachments` (`name`, `record_type`, `record_id`, `blob_id`, `created_at`) VALUES ('image', 'Order', 2, 6, '2020-01-29 16:48:17')[0m
+  ↳ app/controllers/orders_controller.rb:32
+  [1m[36mOrder Update (0.7ms)[0m  [1m[33mUPDATE `orders` SET `updated_at` = '2020-01-29 16:48:17' WHERE `orders`.`id` = 2[0m
+  ↳ app/controllers/orders_controller.rb:32
+  [1m[35m (86.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/orders_controller.rb:32
+[ActiveJob] Enqueued ActiveStorage::AnalyzeJob (Job ID: 82e44d33-ce25-4abb-b591-1a2b1dbdb214) to Async(default) with arguments: #<GlobalID:0x00007f2ab87ff5c8 @uri=#<URI::GID gid://shop/ActiveStorage::Blob/6>>
+Redirected to http://localhost:3000/orders/2
+  [1m[36mActiveStorage::Blob Load (1.5ms)[0m  [1m[34mSELECT  `active_storage_blobs`.* FROM `active_storage_blobs` WHERE `active_storage_blobs`.`id` = 6 LIMIT 1[0m
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+[ActiveJob] [ActiveStorage::AnalyzeJob] [82e44d33-ce25-4abb-b591-1a2b1dbdb214] Performing ActiveStorage::AnalyzeJob (Job ID: 82e44d33-ce25-4abb-b591-1a2b1dbdb214) from Async(default) with arguments: #<GlobalID:0x00007f2ab8bb8e58 @uri=#<URI::GID gid://shop/ActiveStorage::Blob/6>>
+[ActiveJob] [ActiveStorage::AnalyzeJob] [82e44d33-ce25-4abb-b591-1a2b1dbdb214] [36m  Disk Storage (0.1ms) [0m[34mDownloaded file from key: VohEUZh1etUJDUFdzQRTVoVT[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [82e44d33-ce25-4abb-b591-1a2b1dbdb214] Skipping image analysis because the mini_magick gem isn't installed
+Completed 302 Found in 305ms (ActiveRecord: 259.8ms)
+
+
+[ActiveJob] [ActiveStorage::AnalyzeJob] [82e44d33-ce25-4abb-b591-1a2b1dbdb214]   [1m[35m (1.5ms)[0m  [1m[35mBEGIN[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [82e44d33-ce25-4abb-b591-1a2b1dbdb214]   ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+[ActiveJob] [ActiveStorage::AnalyzeJob] [82e44d33-ce25-4abb-b591-1a2b1dbdb214]   [1m[36mActiveStorage::Blob Update (3.0ms)[0m  [1m[33mUPDATE `active_storage_blobs` SET `metadata` = '{\"identified\":true,\"analyzed\":true}' WHERE `active_storage_blobs`.`id` = 6[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [82e44d33-ce25-4abb-b591-1a2b1dbdb214]   ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+Started GET "/orders/2" for ::1 at 2020-01-29 22:18:17 +0530
+Processing by OrdersController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mOrder Load (0.5ms)[0m  [1m[34mSELECT  `orders`.* FROM `orders` WHERE `orders`.`id` = 2 LIMIT 1[0m
+  ↳ app/controllers/orders_controller.rb:72
+  Rendering orders/show.html.erb within layouts/application
+  [1m[36mActiveStorage::Attachment Load (1.1ms)[0m  [1m[34mSELECT  `active_storage_attachments`.* FROM `active_storage_attachments` WHERE `active_storage_attachments`.`record_id` = 2 AND `active_storage_attachments`.`record_type` = 'Order' AND `active_storage_attachments`.`name` = 'image' LIMIT 1[0m
+  ↳ app/views/orders/show.html.erb:9
+  [1m[36mActiveStorage::Blob Load (0.5ms)[0m  [1m[34mSELECT  `active_storage_blobs`.* FROM `active_storage_blobs` WHERE `active_storage_blobs`.`id` = 6 LIMIT 1[0m
+  ↳ app/views/orders/show.html.erb:9
+  Rendered orders/show.html.erb within layouts/application (8.5ms)
+[ActiveJob] [ActiveStorage::AnalyzeJob] [82e44d33-ce25-4abb-b591-1a2b1dbdb214]   [1m[35m (32.4ms)[0m  [1m[35mCOMMIT[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [82e44d33-ce25-4abb-b591-1a2b1dbdb214]   ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+[ActiveJob] [ActiveStorage::AnalyzeJob] [82e44d33-ce25-4abb-b591-1a2b1dbdb214] Performed ActiveStorage::AnalyzeJob (Job ID: 82e44d33-ce25-4abb-b591-1a2b1dbdb214) from Async(default) in 49.99ms
+Completed 200 OK in 46ms (Views: 39.6ms | ActiveRecord: 2.5ms)
+
+
+Started GET "/rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBDdz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--4788ced79baa1a062c2661e2b186b1da6abad9d2/download.jpeg" for ::1 at 2020-01-29 22:18:17 +0530
+Processing by ActiveStorage::BlobsController#show as JPEG
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBDdz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--4788ced79baa1a062c2661e2b186b1da6abad9d2", "filename"=>"download"}
+  [1m[36mActiveStorage::Blob Load (2.9ms)[0m  [1m[34mSELECT  `active_storage_blobs`.* FROM `active_storage_blobs` WHERE `active_storage_blobs`.`id` = 6 LIMIT 1[0m
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+[36m  Disk Storage (1.0ms) [0m[34mGenerated URL for file at key: VohEUZh1etUJDUFdzQRTVoVT (http://localhost:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWRWbTlvUlZWYWFERmxkRlZLUkZWR1pIcFJVbFJXYjFaVUJqb0dSVlE2RUdScGMzQnZjMmwwYVc5dVNTSkZhVzVzYVc1bE95Qm1hV3hsYm1GdFpUMGlaRzkzYm14dllXUXVhbkJsWnlJN0lHWnBiR1Z1WVcxbEtqMVZWRVl0T0NjblpHOTNibXh2WVdRdWFuQmxad1k3QmxRNkVXTnZiblJsYm5SZmRIbHdaVWtpRDJsdFlXZGxMMnB3WldjR093WlUiLCJleHAiOiIyMDIwLTAxLTI5VDE2OjUzOjE3LjYzOVoiLCJwdXIiOiJibG9iX2tleSJ9fQ==--e0591776c0468aa2a5bb76607d07b10dccb68010/download.jpeg?content_type=image%2Fjpeg&disposition=inline%3B+filename%3D%22download.jpeg%22%3B+filename%2A%3DUTF-8%27%27download.jpeg)[0m
+Redirected to http://localhost:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWRWbTlvUlZWYWFERmxkRlZLUkZWR1pIcFJVbFJXYjFaVUJqb0dSVlE2RUdScGMzQnZjMmwwYVc5dVNTSkZhVzVzYVc1bE95Qm1hV3hsYm1GdFpUMGlaRzkzYm14dllXUXVhbkJsWnlJN0lHWnBiR1Z1WVcxbEtqMVZWRVl0T0NjblpHOTNibXh2WVdRdWFuQmxad1k3QmxRNkVXTnZiblJsYm5SZmRIbHdaVWtpRDJsdFlXZGxMMnB3WldjR093WlUiLCJleHAiOiIyMDIwLTAxLTI5VDE2OjUzOjE3LjYzOVoiLCJwdXIiOiJibG9iX2tleSJ9fQ==--e0591776c0468aa2a5bb76607d07b10dccb68010/download.jpeg?content_type=image%2Fjpeg&disposition=inline%3B+filename%3D%22download.jpeg%22%3B+filename%2A%3DUTF-8%27%27download.jpeg
+Completed 302 Found in 8ms (ActiveRecord: 2.9ms)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWRWbTlvUlZWYWFERmxkRlZLUkZWR1pIcFJVbFJXYjFaVUJqb0dSVlE2RUdScGMzQnZjMmwwYVc5dVNTSkZhVzVzYVc1bE95Qm1hV3hsYm1GdFpUMGlaRzkzYm14dllXUXVhbkJsWnlJN0lHWnBiR1Z1WVcxbEtqMVZWRVl0T0NjblpHOTNibXh2WVdRdWFuQmxad1k3QmxRNkVXTnZiblJsYm5SZmRIbHdaVWtpRDJsdFlXZGxMMnB3WldjR093WlUiLCJleHAiOiIyMDIwLTAxLTI5VDE2OjUzOjE3LjYzOVoiLCJwdXIiOiJibG9iX2tleSJ9fQ==--e0591776c0468aa2a5bb76607d07b10dccb68010/download.jpeg?content_type=image%2Fjpeg&disposition=inline%3B+filename%3D%22download.jpeg%22%3B+filename%2A%3DUTF-8%27%27download.jpeg" for ::1 at 2020-01-29 22:18:17 +0530
+Processing by ActiveStorage::DiskController#show as JPEG
+  Parameters: {"content_type"=>"image/jpeg", "disposition"=>"inline; filename=\"download.jpeg\"; filename*=UTF-8''download.jpeg", "encoded_key"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWRWbTlvUlZWYWFERmxkRlZLUkZWR1pIcFJVbFJXYjFaVUJqb0dSVlE2RUdScGMzQnZjMmwwYVc5dVNTSkZhVzVzYVc1bE95Qm1hV3hsYm1GdFpUMGlaRzkzYm14dllXUXVhbkJsWnlJN0lHWnBiR1Z1WVcxbEtqMVZWRVl0T0NjblpHOTNibXh2WVdRdWFuQmxad1k3QmxRNkVXTnZiblJsYm5SZmRIbHdaVWtpRDJsdFlXZGxMMnB3WldjR093WlUiLCJleHAiOiIyMDIwLTAxLTI5VDE2OjUzOjE3LjYzOVoiLCJwdXIiOiJibG9iX2tleSJ9fQ==--e0591776c0468aa2a5bb76607d07b10dccb68010", "filename"=>"download"}
+Completed 200 OK in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/orders/2/edit" for ::1 at 2020-01-29 22:18:28 +0530
+Processing by OrdersController#edit as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mOrder Load (1.5ms)[0m  [1m[34mSELECT  `orders`.* FROM `orders` WHERE `orders`.`id` = 2 LIMIT 1[0m
+  ↳ app/controllers/orders_controller.rb:72
+  Rendering orders/edit.html.erb within layouts/application
+  Rendered orders/_form.html.erb (4.6ms)
+  Rendered orders/edit.html.erb within layouts/application (6.8ms)
+Completed 200 OK in 47ms (Views: 32.7ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/orders/2" for ::1 at 2020-01-29 22:18:31 +0530
+Processing by OrdersController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mOrder Load (0.7ms)[0m  [1m[34mSELECT  `orders`.* FROM `orders` WHERE `orders`.`id` = 2 LIMIT 1[0m
+  ↳ app/controllers/orders_controller.rb:72
+  Rendering orders/show.html.erb within layouts/application
+  [1m[36mActiveStorage::Attachment Load (1.6ms)[0m  [1m[34mSELECT  `active_storage_attachments`.* FROM `active_storage_attachments` WHERE `active_storage_attachments`.`record_id` = 2 AND `active_storage_attachments`.`record_type` = 'Order' AND `active_storage_attachments`.`name` = 'image' LIMIT 1[0m
+  ↳ app/views/orders/show.html.erb:9
+  [1m[36mActiveStorage::Blob Load (1.0ms)[0m  [1m[34mSELECT  `active_storage_blobs`.* FROM `active_storage_blobs` WHERE `active_storage_blobs`.`id` = 6 LIMIT 1[0m
+  ↳ app/views/orders/show.html.erb:9
+  Rendered orders/show.html.erb within layouts/application (11.4ms)
+Completed 200 OK in 45ms (Views: 36.8ms | ActiveRecord: 4.1ms)
+
+
+Started GET "/orders" for ::1 at 2020-01-29 22:18:32 +0530
+Processing by OrdersController#index as HTML
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+  Rendering orders/index.html.erb within layouts/application
+  Rendered orders/index.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 34ms (Views: 28.8ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/" for ::1 at 2020-01-29 22:18:41 +0530
+Processing by OrdersController#index as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+  Rendering orders/index.html.erb within layouts/application
+  Rendered orders/index.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 43ms (Views: 38.5ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/" for ::1 at 2020-01-30 17:45:05 +0530
+  [1m[35m (56.8ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+Processing by OrdersController#index as HTML
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+  Rendering orders/index.html.erb within layouts/application
+  Rendered orders/index.html.erb within layouts/application (13.1ms)
+Completed 200 OK in 1204ms (Views: 1040.7ms | ActiveRecord: 41.4ms)
+
+
+Started GET "/orders/new" for ::1 at 2020-01-30 17:45:09 +0530
+Processing by OrdersController#new as HTML
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+  Rendering orders/new.html.erb within layouts/application
+  Rendered orders/_form.html.erb (206.3ms)
+  Rendered orders/new.html.erb within layouts/application (248.1ms)
+Completed 200 OK in 322ms (Views: 266.6ms | ActiveRecord: 2.0ms)
+
+
+Started POST "/orders" for ::1 at 2020-01-30 17:45:27 +0530
+Processing by OrdersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"WNaPS8p7nZeNzkiWho7yACRwxb2OpD8UPfxR83erzKmYTIDstw/8jOoEOgMHR1+8geeayPSXrp/dj/S+BnrYsw==", "order"=>{"Name"=>"Apple", "image"=>#<ActionDispatch::Http::UploadedFile:0x00007fe4947a91f0 @tempfile=#<Tempfile:/tmp/RackMultipart20200130-10598-1lldi4v.jpg>, @original_filename="apple.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"order[image]\"; filename=\"apple.jpg\"\r\nContent-Type: image/jpeg\r\n">, "Description"=>"bfgd", "Age"=>"34", "Cost"=>"42", "Address"=>"dfvds"}, "commit"=>"Create Order"}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+[36m  Disk Storage (19.4ms) [0m[32mUploaded file to key: hMAeUcAm1921fLBgButzEMDL (checksum: /9V0WnCskf5ZA6r8TP2M9g==)[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/orders_controller.rb:29
+  [1m[36mActiveStorage::Blob Create (18.7ms)[0m  [1m[32mINSERT INTO `active_storage_blobs` (`key`, `filename`, `content_type`, `metadata`, `byte_size`, `checksum`, `created_at`) VALUES ('hMAeUcAm1921fLBgButzEMDL', 'apple.jpg', 'image/jpeg', '{\"identified\":true}', 24766, '/9V0WnCskf5ZA6r8TP2M9g==', '2020-01-30 12:15:27')[0m
+  ↳ app/controllers/orders_controller.rb:29
+  [1m[35m (97.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/orders_controller.rb:29
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/orders_controller.rb:29
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/orders_controller.rb:29
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/orders_controller.rb:32
+  [1m[36mOrder Create (0.6ms)[0m  [1m[32mINSERT INTO `orders` (`Name`, `Description`, `Age`, `Cost`, `Address`, `created_at`, `updated_at`, `user_id`) VALUES ('Apple', 'bfgd', 34, 42.0, 'dfvds', '2020-01-30 12:15:27', '2020-01-30 12:15:27', 1)[0m
+  ↳ app/controllers/orders_controller.rb:32
+  [1m[36mActiveStorage::Attachment Create (0.4ms)[0m  [1m[32mINSERT INTO `active_storage_attachments` (`name`, `record_type`, `record_id`, `blob_id`, `created_at`) VALUES ('image', 'Order', 3, 7, '2020-01-30 12:15:27')[0m
+  ↳ app/controllers/orders_controller.rb:32
+  [1m[36mOrder Update (32.2ms)[0m  [1m[33mUPDATE `orders` SET `updated_at` = '2020-01-30 12:15:27' WHERE `orders`.`id` = 3[0m
+  ↳ app/controllers/orders_controller.rb:32
+  [1m[35m (52.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/orders_controller.rb:32
+[ActiveJob] Enqueued ActiveStorage::AnalyzeJob (Job ID: 773f0fe4-1bc5-4e20-b34b-a8c42b74b3dc) to Async(default) with arguments: #<GlobalID:0x000055f7828be410 @uri=#<URI::GID gid://shop/ActiveStorage::Blob/7>>
+Redirected to http://localhost:3000/orders/3
+Completed 302 Found in 666ms (ActiveRecord: 223.0ms)
+
+
+  [1m[36mActiveStorage::Blob Load (1.2ms)[0m  [1m[34mSELECT  `active_storage_blobs`.* FROM `active_storage_blobs` WHERE `active_storage_blobs`.`id` = 7 LIMIT 1[0m
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+[ActiveJob] [ActiveStorage::AnalyzeJob] [773f0fe4-1bc5-4e20-b34b-a8c42b74b3dc] Performing ActiveStorage::AnalyzeJob (Job ID: 773f0fe4-1bc5-4e20-b34b-a8c42b74b3dc) from Async(default) with arguments: #<GlobalID:0x000055f782a8a1e0 @uri=#<URI::GID gid://shop/ActiveStorage::Blob/7>>
+[ActiveJob] [ActiveStorage::AnalyzeJob] [773f0fe4-1bc5-4e20-b34b-a8c42b74b3dc] [36m  Disk Storage (0.2ms) [0m[34mDownloaded file from key: hMAeUcAm1921fLBgButzEMDL[0m
+Started GET "/orders/3" for ::1 at 2020-01-30 17:45:27 +0530
+[ActiveJob] [ActiveStorage::AnalyzeJob] [773f0fe4-1bc5-4e20-b34b-a8c42b74b3dc] Skipping image analysis because the mini_magick gem isn't installed
+[ActiveJob] [ActiveStorage::AnalyzeJob] [773f0fe4-1bc5-4e20-b34b-a8c42b74b3dc]   [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [773f0fe4-1bc5-4e20-b34b-a8c42b74b3dc]   ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+  [1m[35m (2.1ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+[ActiveJob] [ActiveStorage::AnalyzeJob] [773f0fe4-1bc5-4e20-b34b-a8c42b74b3dc]   [1m[36mActiveStorage::Blob Update (2.2ms)[0m  [1m[33mUPDATE `active_storage_blobs` SET `metadata` = '{\"identified\":true,\"analyzed\":true}' WHERE `active_storage_blobs`.`id` = 7[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [773f0fe4-1bc5-4e20-b34b-a8c42b74b3dc]   ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+Processing by OrdersController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mOrder Load (0.6ms)[0m  [1m[34mSELECT  `orders`.* FROM `orders` WHERE `orders`.`id` = 3 LIMIT 1[0m
+  ↳ app/controllers/orders_controller.rb:72
+  Rendering orders/show.html.erb within layouts/application
+[ActiveJob] [ActiveStorage::AnalyzeJob] [773f0fe4-1bc5-4e20-b34b-a8c42b74b3dc]   [1m[35m (65.4ms)[0m  [1m[35mCOMMIT[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [773f0fe4-1bc5-4e20-b34b-a8c42b74b3dc]   ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+[ActiveJob] [ActiveStorage::AnalyzeJob] [773f0fe4-1bc5-4e20-b34b-a8c42b74b3dc] Performed ActiveStorage::AnalyzeJob (Job ID: 773f0fe4-1bc5-4e20-b34b-a8c42b74b3dc) from Async(default) in 81.83ms
+  [1m[36mActiveStorage::Attachment Load (0.8ms)[0m  [1m[34mSELECT  `active_storage_attachments`.* FROM `active_storage_attachments` WHERE `active_storage_attachments`.`record_id` = 3 AND `active_storage_attachments`.`record_type` = 'Order' AND `active_storage_attachments`.`name` = 'image' LIMIT 1[0m
+  ↳ app/views/orders/show.html.erb:9
+  [1m[36mActiveStorage::Blob Load (0.6ms)[0m  [1m[34mSELECT  `active_storage_blobs`.* FROM `active_storage_blobs` WHERE `active_storage_blobs`.`id` = 7 LIMIT 1[0m
+  ↳ app/views/orders/show.html.erb:9
+  Rendered orders/show.html.erb within layouts/application (27.2ms)
+Completed 200 OK in 133ms (Views: 86.6ms | ActiveRecord: 2.6ms)
+
+
+Started GET "/rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBEQT09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--36d12f5eda6eb2717351f6a6baffc3ba6e98aaee/apple.jpg" for ::1 at 2020-01-30 17:45:27 +0530
+Processing by ActiveStorage::BlobsController#show as JPEG
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBEQT09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--36d12f5eda6eb2717351f6a6baffc3ba6e98aaee", "filename"=>"apple"}
+  [1m[36mActiveStorage::Blob Load (0.9ms)[0m  [1m[34mSELECT  `active_storage_blobs`.* FROM `active_storage_blobs` WHERE `active_storage_blobs`.`id` = 7 LIMIT 1[0m
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+[36m  Disk Storage (1.5ms) [0m[34mGenerated URL for file at key: hMAeUcAm1921fLBgButzEMDL (http://localhost:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWRhRTFCWlZWalFXMHhPVEl4Wmt4Q1owSjFkSHBGVFVSTUJqb0dSVlE2RUdScGMzQnZjMmwwYVc5dVNTSTlhVzVzYVc1bE95Qm1hV3hsYm1GdFpUMGlZWEJ3YkdVdWFuQm5JanNnWm1sc1pXNWhiV1VxUFZWVVJpMDRKeWRoY0hCc1pTNXFjR2NHT3daVU9oRmpiMjUwWlc1MFgzUjVjR1ZKSWc5cGJXRm5aUzlxY0dWbkJqc0dWQT09IiwiZXhwIjoiMjAyMC0wMS0zMFQxMjoyMDoyNy45ODBaIiwicHVyIjoiYmxvYl9rZXkifX0=--eaf9b17e3da8f28e7a84947c18d73dd9677734f2/apple.jpg?content_type=image%2Fjpeg&disposition=inline%3B+filename%3D%22apple.jpg%22%3B+filename%2A%3DUTF-8%27%27apple.jpg)[0m
+Redirected to http://localhost:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWRhRTFCWlZWalFXMHhPVEl4Wmt4Q1owSjFkSHBGVFVSTUJqb0dSVlE2RUdScGMzQnZjMmwwYVc5dVNTSTlhVzVzYVc1bE95Qm1hV3hsYm1GdFpUMGlZWEJ3YkdVdWFuQm5JanNnWm1sc1pXNWhiV1VxUFZWVVJpMDRKeWRoY0hCc1pTNXFjR2NHT3daVU9oRmpiMjUwWlc1MFgzUjVjR1ZKSWc5cGJXRm5aUzlxY0dWbkJqc0dWQT09IiwiZXhwIjoiMjAyMC0wMS0zMFQxMjoyMDoyNy45ODBaIiwicHVyIjoiYmxvYl9rZXkifX0=--eaf9b17e3da8f28e7a84947c18d73dd9677734f2/apple.jpg?content_type=image%2Fjpeg&disposition=inline%3B+filename%3D%22apple.jpg%22%3B+filename%2A%3DUTF-8%27%27apple.jpg
+Completed 302 Found in 8ms (ActiveRecord: 0.9ms)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWRhRTFCWlZWalFXMHhPVEl4Wmt4Q1owSjFkSHBGVFVSTUJqb0dSVlE2RUdScGMzQnZjMmwwYVc5dVNTSTlhVzVzYVc1bE95Qm1hV3hsYm1GdFpUMGlZWEJ3YkdVdWFuQm5JanNnWm1sc1pXNWhiV1VxUFZWVVJpMDRKeWRoY0hCc1pTNXFjR2NHT3daVU9oRmpiMjUwWlc1MFgzUjVjR1ZKSWc5cGJXRm5aUzlxY0dWbkJqc0dWQT09IiwiZXhwIjoiMjAyMC0wMS0zMFQxMjoyMDoyNy45ODBaIiwicHVyIjoiYmxvYl9rZXkifX0=--eaf9b17e3da8f28e7a84947c18d73dd9677734f2/apple.jpg?content_type=image%2Fjpeg&disposition=inline%3B+filename%3D%22apple.jpg%22%3B+filename%2A%3DUTF-8%27%27apple.jpg" for ::1 at 2020-01-30 17:45:28 +0530
+Processing by ActiveStorage::DiskController#show as JPEG
+  Parameters: {"content_type"=>"image/jpeg", "disposition"=>"inline; filename=\"apple.jpg\"; filename*=UTF-8''apple.jpg", "encoded_key"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWRhRTFCWlZWalFXMHhPVEl4Wmt4Q1owSjFkSHBGVFVSTUJqb0dSVlE2RUdScGMzQnZjMmwwYVc5dVNTSTlhVzVzYVc1bE95Qm1hV3hsYm1GdFpUMGlZWEJ3YkdVdWFuQm5JanNnWm1sc1pXNWhiV1VxUFZWVVJpMDRKeWRoY0hCc1pTNXFjR2NHT3daVU9oRmpiMjUwWlc1MFgzUjVjR1ZKSWc5cGJXRm5aUzlxY0dWbkJqc0dWQT09IiwiZXhwIjoiMjAyMC0wMS0zMFQxMjoyMDoyNy45ODBaIiwicHVyIjoiYmxvYl9rZXkifX0=--eaf9b17e3da8f28e7a84947c18d73dd9677734f2", "filename"=>"apple"}
+Completed 200 OK in 2ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/orders" for ::1 at 2020-01-30 17:45:35 +0530
+Processing by OrdersController#index as HTML
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+  Rendering orders/index.html.erb within layouts/application
+  Rendered orders/index.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 36ms (Views: 31.7ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/orders/new" for ::1 at 2020-01-30 17:45:39 +0530
+Processing by OrdersController#new as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+  Rendering orders/new.html.erb within layouts/application
+  Rendered orders/_form.html.erb (9.4ms)
+  Rendered orders/new.html.erb within layouts/application (11.3ms)
+Completed 200 OK in 49ms (Views: 44.3ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/orders" for ::1 at 2020-01-30 17:45:40 +0530
+Processing by OrdersController#index as HTML
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+  Rendering orders/index.html.erb within layouts/application
+  Rendered orders/index.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 46ms (Views: 41.4ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/orders" for ::1 at 2020-01-30 17:45:45 +0530
+Processing by OrdersController#index as HTML
+  [1m[36mUser Load (1.7ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+  Rendering orders/index.html.erb within layouts/application
+  Rendered orders/index.html.erb within layouts/application (4.0ms)
+Completed 200 OK in 72ms (Views: 63.4ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/" for ::1 at 2020-01-30 17:52:06 +0530
+  [1m[35m (0.6ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+Processing by OrdersController#index as HTML
+Completed 401 Unauthorized in 11ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2020-01-30 17:52:07 +0530
+Processing by Devise::SessionsController#new as HTML
+  Rendering /var/lib/gems/2.5.0/gems/devise-4.7.1/app/views/devise/sessions/new.html.erb within layouts/application
+  Rendered /var/lib/gems/2.5.0/gems/devise-4.7.1/app/views/devise/shared/_links.html.erb (2.7ms)
+  Rendered /var/lib/gems/2.5.0/gems/devise-4.7.1/app/views/devise/sessions/new.html.erb within layouts/application (52.6ms)
+Completed 200 OK in 874ms (Views: 857.7ms | ActiveRecord: 1.9ms)
+
+
+Started POST "/users/sign_in" for ::1 at 2020-01-30 17:52:14 +0530
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"DAssEzDjI5+W3LURrY0rKY1wAyVCvOy/iGByZjOshxdt4uAzs7gBp/iDJxZgwXYamgUH316km52m2nnxXnOClA==", "user"=>{"email"=>"akbhobhiya2000@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'akbhobhiya2000@gmail.com' ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+Redirected to http://localhost:3000/
+Completed 302 Found in 227ms (ActiveRecord: 0.8ms)
+
+
+Started GET "/" for ::1 at 2020-01-30 17:52:14 +0530
+Processing by OrdersController#index as HTML
+  [1m[36mUser Load (1.7ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+  Rendering orders/index.html.erb within layouts/application
+  Rendered orders/index.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 74ms (Views: 24.0ms | ActiveRecord: 3.3ms)
+
+
+Started GET "/orders/new" for ::1 at 2020-01-30 17:52:17 +0530
+Processing by OrdersController#new as HTML
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+  Rendering orders/new.html.erb within layouts/application
+  Rendered orders/_form.html.erb (15.7ms)
+  Rendered orders/new.html.erb within layouts/application (17.7ms)
+Completed 200 OK in 65ms (Views: 48.4ms | ActiveRecord: 3.4ms)
+
+
+Started POST "/orders" for ::1 at 2020-01-30 17:52:38 +0530
+Processing by OrdersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"pNjJ9aOuAT0SWAUBCkfeQiHj0gEenKmVUiw4Q1wxurHMXMXBBfFIM8qxDXSYmPtNZvml7iuC7eOHcZ76CUi4VQ==", "order"=>{"Name"=>"Apple", "image"=>#<ActionDispatch::Http::UploadedFile:0x000055812a569db0 @tempfile=#<Tempfile:/tmp/RackMultipart20200130-10870-1bcriw0.jpg>, @original_filename="apple.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"order[image]\"; filename=\"apple.jpg\"\r\nContent-Type: image/jpeg\r\n">, "Description"=>"wqd", "Age"=>"21", "Cost"=>"2222222", "Address"=>"daccccccccccccccccccc"}, "commit"=>"Create Order"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+[36m  Disk Storage (1.5ms) [0m[32mUploaded file to key: vKcfMJoXKmVZHsretX5av3iQ (checksum: /9V0WnCskf5ZA6r8TP2M9g==)[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/orders_controller.rb:29
+  [1m[36mActiveStorage::Blob Create (0.6ms)[0m  [1m[32mINSERT INTO `active_storage_blobs` (`key`, `filename`, `content_type`, `metadata`, `byte_size`, `checksum`, `created_at`) VALUES ('vKcfMJoXKmVZHsretX5av3iQ', 'apple.jpg', 'image/jpeg', '{\"identified\":true}', 24766, '/9V0WnCskf5ZA6r8TP2M9g==', '2020-01-30 12:22:39')[0m
+  ↳ app/controllers/orders_controller.rb:29
+  [1m[35m (76.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/orders_controller.rb:29
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/orders_controller.rb:29
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/orders_controller.rb:29
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/orders_controller.rb:32
+  [1m[36mOrder Create (1.0ms)[0m  [1m[32mINSERT INTO `orders` (`Name`, `Description`, `Age`, `Cost`, `Address`, `created_at`, `updated_at`, `user_id`) VALUES ('Apple', 'wqd', 21, 2222222.0, 'daccccccccccccccccccc', '2020-01-30 12:22:39', '2020-01-30 12:22:39', 1)[0m
+  ↳ app/controllers/orders_controller.rb:32
+  [1m[36mActiveStorage::Attachment Create (91.4ms)[0m  [1m[32mINSERT INTO `active_storage_attachments` (`name`, `record_type`, `record_id`, `blob_id`, `created_at`) VALUES ('image', 'Order', 4, 8, '2020-01-30 12:22:39')[0m
+  ↳ app/controllers/orders_controller.rb:32
+  [1m[36mOrder Update (0.5ms)[0m  [1m[33mUPDATE `orders` SET `updated_at` = '2020-01-30 12:22:39' WHERE `orders`.`id` = 4[0m
+  ↳ app/controllers/orders_controller.rb:32
+  [1m[35m (62.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/orders_controller.rb:32
+[ActiveJob] Enqueued ActiveStorage::AnalyzeJob (Job ID: 1cc0a7d1-993c-4dac-b296-6d21cf158949) to Async(default) with arguments: #<GlobalID:0x00007f03a0d92240 @uri=#<URI::GID gid://shop/ActiveStorage::Blob/8>>
+Redirected to http://localhost:3000/orders/4
+Completed 302 Found in 711ms (ActiveRecord: 301.7ms)
+
+
+Started GET "/orders/4" for ::1 at 2020-01-30 17:52:39 +0530
+Processing by OrdersController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mActiveStorage::Blob Load (0.8ms)[0m  [1m[34mSELECT  `active_storage_blobs`.* FROM `active_storage_blobs` WHERE `active_storage_blobs`.`id` = 8 LIMIT 1[0m
+  [1m[36mOrder Load (4.2ms)[0m  [1m[34mSELECT  `orders`.* FROM `orders` WHERE `orders`.`id` = 4 LIMIT 1[0m
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+  ↳ app/controllers/orders_controller.rb:72
+[ActiveJob] [ActiveStorage::AnalyzeJob] [1cc0a7d1-993c-4dac-b296-6d21cf158949] Performing ActiveStorage::AnalyzeJob (Job ID: 1cc0a7d1-993c-4dac-b296-6d21cf158949) from Async(default) with arguments: #<GlobalID:0x00007f03a087d930 @uri=#<URI::GID gid://shop/ActiveStorage::Blob/8>>
+  Rendering orders/show.html.erb within layouts/application
+[ActiveJob] [ActiveStorage::AnalyzeJob] [1cc0a7d1-993c-4dac-b296-6d21cf158949] [36m  Disk Storage (2.3ms) [0m[34mDownloaded file from key: vKcfMJoXKmVZHsretX5av3iQ[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [1cc0a7d1-993c-4dac-b296-6d21cf158949] Skipping image analysis because the mini_magick gem isn't installed
+[ActiveJob] [ActiveStorage::AnalyzeJob] [1cc0a7d1-993c-4dac-b296-6d21cf158949]   [1m[35m (4.0ms)[0m  [1m[35mBEGIN[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [1cc0a7d1-993c-4dac-b296-6d21cf158949]   ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mActiveStorage::Attachment Load (4.9ms)[0m  [1m[34mSELECT  `active_storage_attachments`.* FROM `active_storage_attachments` WHERE `active_storage_attachments`.`record_id` = 4 AND `active_storage_attachments`.`record_type` = 'Order' AND `active_storage_attachments`.`name` = 'image' LIMIT 1[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [1cc0a7d1-993c-4dac-b296-6d21cf158949]   [1m[36mActiveStorage::Blob Update (0.9ms)[0m  [1m[33mUPDATE `active_storage_blobs` SET `metadata` = '{\"identified\":true,\"analyzed\":true}' WHERE `active_storage_blobs`.`id` = 8[0m
+  ↳ app/views/orders/show.html.erb:9
+[ActiveJob] [ActiveStorage::AnalyzeJob] [1cc0a7d1-993c-4dac-b296-6d21cf158949]   ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mActiveStorage::Blob Load (6.2ms)[0m  [1m[34mSELECT  `active_storage_blobs`.* FROM `active_storage_blobs` WHERE `active_storage_blobs`.`id` = 8 LIMIT 1[0m
+  ↳ app/views/orders/show.html.erb:9
+  Rendered orders/show.html.erb within layouts/application (30.3ms)
+[ActiveJob] [ActiveStorage::AnalyzeJob] [1cc0a7d1-993c-4dac-b296-6d21cf158949]   [1m[35m (32.4ms)[0m  [1m[35mCOMMIT[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [1cc0a7d1-993c-4dac-b296-6d21cf158949]   ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+[ActiveJob] [ActiveStorage::AnalyzeJob] [1cc0a7d1-993c-4dac-b296-6d21cf158949] Performed ActiveStorage::AnalyzeJob (Job ID: 1cc0a7d1-993c-4dac-b296-6d21cf158949) from Async(default) in 61.99ms
+Completed 200 OK in 95ms (Views: 58.5ms | ActiveRecord: 15.8ms)
+
+
+Started GET "/rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBEUT09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--757b47d61bea5c0ded9259e612c5c6dd507452da/apple.jpg" for ::1 at 2020-01-30 17:52:39 +0530
+Processing by ActiveStorage::BlobsController#show as JPEG
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBEUT09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--757b47d61bea5c0ded9259e612c5c6dd507452da", "filename"=>"apple"}
+  [1m[36mActiveStorage::Blob Load (0.5ms)[0m  [1m[34mSELECT  `active_storage_blobs`.* FROM `active_storage_blobs` WHERE `active_storage_blobs`.`id` = 8 LIMIT 1[0m
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+[36m  Disk Storage (1.7ms) [0m[34mGenerated URL for file at key: vKcfMJoXKmVZHsretX5av3iQ (http://localhost:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWRka3RqWmsxS2IxaExiVlphU0hOeVpYUllOV0YyTTJsUkJqb0dSVlE2RUdScGMzQnZjMmwwYVc5dVNTSTlhVzVzYVc1bE95Qm1hV3hsYm1GdFpUMGlZWEJ3YkdVdWFuQm5JanNnWm1sc1pXNWhiV1VxUFZWVVJpMDRKeWRoY0hCc1pTNXFjR2NHT3daVU9oRmpiMjUwWlc1MFgzUjVjR1ZKSWc5cGJXRm5aUzlxY0dWbkJqc0dWQT09IiwiZXhwIjoiMjAyMC0wMS0zMFQxMjoyNzozOS45NDVaIiwicHVyIjoiYmxvYl9rZXkifX0=--d4a54e3f279856eb61049837b0fb16e1f03cebac/apple.jpg?content_type=image%2Fjpeg&disposition=inline%3B+filename%3D%22apple.jpg%22%3B+filename%2A%3DUTF-8%27%27apple.jpg)[0m
+Redirected to http://localhost:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWRka3RqWmsxS2IxaExiVlphU0hOeVpYUllOV0YyTTJsUkJqb0dSVlE2RUdScGMzQnZjMmwwYVc5dVNTSTlhVzVzYVc1bE95Qm1hV3hsYm1GdFpUMGlZWEJ3YkdVdWFuQm5JanNnWm1sc1pXNWhiV1VxUFZWVVJpMDRKeWRoY0hCc1pTNXFjR2NHT3daVU9oRmpiMjUwWlc1MFgzUjVjR1ZKSWc5cGJXRm5aUzlxY0dWbkJqc0dWQT09IiwiZXhwIjoiMjAyMC0wMS0zMFQxMjoyNzozOS45NDVaIiwicHVyIjoiYmxvYl9rZXkifX0=--d4a54e3f279856eb61049837b0fb16e1f03cebac/apple.jpg?content_type=image%2Fjpeg&disposition=inline%3B+filename%3D%22apple.jpg%22%3B+filename%2A%3DUTF-8%27%27apple.jpg
+Completed 302 Found in 11ms (ActiveRecord: 0.5ms)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWRka3RqWmsxS2IxaExiVlphU0hOeVpYUllOV0YyTTJsUkJqb0dSVlE2RUdScGMzQnZjMmwwYVc5dVNTSTlhVzVzYVc1bE95Qm1hV3hsYm1GdFpUMGlZWEJ3YkdVdWFuQm5JanNnWm1sc1pXNWhiV1VxUFZWVVJpMDRKeWRoY0hCc1pTNXFjR2NHT3daVU9oRmpiMjUwWlc1MFgzUjVjR1ZKSWc5cGJXRm5aUzlxY0dWbkJqc0dWQT09IiwiZXhwIjoiMjAyMC0wMS0zMFQxMjoyNzozOS45NDVaIiwicHVyIjoiYmxvYl9rZXkifX0=--d4a54e3f279856eb61049837b0fb16e1f03cebac/apple.jpg?content_type=image%2Fjpeg&disposition=inline%3B+filename%3D%22apple.jpg%22%3B+filename%2A%3DUTF-8%27%27apple.jpg" for ::1 at 2020-01-30 17:52:39 +0530
+Processing by ActiveStorage::DiskController#show as JPEG
+  Parameters: {"content_type"=>"image/jpeg", "disposition"=>"inline; filename=\"apple.jpg\"; filename*=UTF-8''apple.jpg", "encoded_key"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWRka3RqWmsxS2IxaExiVlphU0hOeVpYUllOV0YyTTJsUkJqb0dSVlE2RUdScGMzQnZjMmwwYVc5dVNTSTlhVzVzYVc1bE95Qm1hV3hsYm1GdFpUMGlZWEJ3YkdVdWFuQm5JanNnWm1sc1pXNWhiV1VxUFZWVVJpMDRKeWRoY0hCc1pTNXFjR2NHT3daVU9oRmpiMjUwWlc1MFgzUjVjR1ZKSWc5cGJXRm5aUzlxY0dWbkJqc0dWQT09IiwiZXhwIjoiMjAyMC0wMS0zMFQxMjoyNzozOS45NDVaIiwicHVyIjoiYmxvYl9rZXkifX0=--d4a54e3f279856eb61049837b0fb16e1f03cebac", "filename"=>"apple"}
+Completed 200 OK in 2ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/orders" for ::1 at 2020-01-30 17:52:55 +0530
+Processing by OrdersController#index as HTML
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+  Rendering orders/index.html.erb within layouts/application
+  Rendered orders/index.html.erb within layouts/application (4.8ms)
+Completed 200 OK in 58ms (Views: 52.6ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/orders/new" for ::1 at 2020-01-30 17:52:56 +0530
+Processing by OrdersController#new as HTML
+  [1m[36mUser Load (2.7ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+  Rendering orders/new.html.erb within layouts/application
+  Rendered orders/_form.html.erb (10.7ms)
+  Rendered orders/new.html.erb within layouts/application (15.5ms)
+Completed 200 OK in 56ms (Views: 48.8ms | ActiveRecord: 2.7ms)
+
+
+Started POST "/orders" for ::1 at 2020-01-30 17:53:10 +0530
+Processing by OrdersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ZIX1n1Vr8o1gWf5BlV46+tp9aGfJBXJMH2RZuFkrPi8MAfmr8zS7g7iw9jQHgR/1nWcfiPwbNjrKOf8BDFI8yw==", "order"=>{"Name"=>"Apple", "image"=>#<ActionDispatch::Http::UploadedFile:0x00007f03ac19bb38 @tempfile=#<Tempfile:/tmp/RackMultipart20200130-10870-vv6zwy.jpeg>, @original_filename="download.jpeg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"order[image]\"; filename=\"download.jpeg\"\r\nContent-Type: image/jpeg\r\n">, "Description"=>"ewdc", "Age"=>"12", "Cost"=>"122", "Address"=>"fvcac"}, "commit"=>"Create Order"}
+  [1m[36mUser Load (3.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+[36m  Disk Storage (10.3ms) [0m[32mUploaded file to key: WjqkvP5AMVhkFSdh73N8KF2R (checksum: uvS2hC/eAzE89DbZOCtTGQ==)[0m
+  [1m[35m (0.9ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/orders_controller.rb:29
+  [1m[36mActiveStorage::Blob Create (1.4ms)[0m  [1m[32mINSERT INTO `active_storage_blobs` (`key`, `filename`, `content_type`, `metadata`, `byte_size`, `checksum`, `created_at`) VALUES ('WjqkvP5AMVhkFSdh73N8KF2R', 'download.jpeg', 'image/jpeg', '{\"identified\":true}', 7962, 'uvS2hC/eAzE89DbZOCtTGQ==', '2020-01-30 12:23:10')[0m
+  ↳ app/controllers/orders_controller.rb:29
+  [1m[35m (49.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/orders_controller.rb:29
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/orders_controller.rb:29
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/orders_controller.rb:29
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/orders_controller.rb:32
+  [1m[36mOrder Create (0.5ms)[0m  [1m[32mINSERT INTO `orders` (`Name`, `Description`, `Age`, `Cost`, `Address`, `created_at`, `updated_at`, `user_id`) VALUES ('Apple', 'ewdc', 12, 122.0, 'fvcac', '2020-01-30 12:23:10', '2020-01-30 12:23:10', 1)[0m
+  ↳ app/controllers/orders_controller.rb:32
+  [1m[36mActiveStorage::Attachment Create (0.5ms)[0m  [1m[32mINSERT INTO `active_storage_attachments` (`name`, `record_type`, `record_id`, `blob_id`, `created_at`) VALUES ('image', 'Order', 5, 9, '2020-01-30 12:23:10')[0m
+  ↳ app/controllers/orders_controller.rb:32
+  [1m[36mOrder Update (0.5ms)[0m  [1m[33mUPDATE `orders` SET `updated_at` = '2020-01-30 12:23:10' WHERE `orders`.`id` = 5[0m
+  ↳ app/controllers/orders_controller.rb:32
+  [1m[35m (39.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/orders_controller.rb:32
+[ActiveJob] Enqueued ActiveStorage::AnalyzeJob (Job ID: 6b4cc748-617b-46bf-bd54-e2be8a0b35e9) to Async(default) with arguments: #<GlobalID:0x00007f038c0af230 @uri=#<URI::GID gid://shop/ActiveStorage::Blob/9>>
+Redirected to http://localhost:3000/orders/5
+  [1m[36mActiveStorage::Blob Load (2.0ms)[0m  [1m[34mSELECT  `active_storage_blobs`.* FROM `active_storage_blobs` WHERE `active_storage_blobs`.`id` = 9 LIMIT 1[0m
+Completed 302 Found in 149ms (ActiveRecord: 95.8ms)
+
+
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+[ActiveJob] [ActiveStorage::AnalyzeJob] [6b4cc748-617b-46bf-bd54-e2be8a0b35e9] Performing ActiveStorage::AnalyzeJob (Job ID: 6b4cc748-617b-46bf-bd54-e2be8a0b35e9) from Async(default) with arguments: #<GlobalID:0x00007f038c133918 @uri=#<URI::GID gid://shop/ActiveStorage::Blob/9>>
+[ActiveJob] [ActiveStorage::AnalyzeJob] [6b4cc748-617b-46bf-bd54-e2be8a0b35e9] [36m  Disk Storage (0.1ms) [0m[34mDownloaded file from key: WjqkvP5AMVhkFSdh73N8KF2R[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [6b4cc748-617b-46bf-bd54-e2be8a0b35e9] Skipping image analysis because the mini_magick gem isn't installed
+[ActiveJob] [ActiveStorage::AnalyzeJob] [6b4cc748-617b-46bf-bd54-e2be8a0b35e9]   [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [6b4cc748-617b-46bf-bd54-e2be8a0b35e9]   ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+Started GET "/orders/5" for ::1 at 2020-01-30 17:53:10 +0530
+Processing by OrdersController#show as HTML
+  Parameters: {"id"=>"5"}
+[ActiveJob] [ActiveStorage::AnalyzeJob] [6b4cc748-617b-46bf-bd54-e2be8a0b35e9]   [1m[36mActiveStorage::Blob Update (7.1ms)[0m  [1m[33mUPDATE `active_storage_blobs` SET `metadata` = '{\"identified\":true,\"analyzed\":true}' WHERE `active_storage_blobs`.`id` = 9[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [6b4cc748-617b-46bf-bd54-e2be8a0b35e9]   ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Load (2.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mOrder Load (0.5ms)[0m  [1m[34mSELECT  `orders`.* FROM `orders` WHERE `orders`.`id` = 5 LIMIT 1[0m
+  ↳ app/controllers/orders_controller.rb:72
+[ActiveJob] [ActiveStorage::AnalyzeJob] [6b4cc748-617b-46bf-bd54-e2be8a0b35e9]   [1m[35m (30.9ms)[0m  [1m[35mCOMMIT[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [6b4cc748-617b-46bf-bd54-e2be8a0b35e9]   ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+[ActiveJob] [ActiveStorage::AnalyzeJob] [6b4cc748-617b-46bf-bd54-e2be8a0b35e9] Performed ActiveStorage::AnalyzeJob (Job ID: 6b4cc748-617b-46bf-bd54-e2be8a0b35e9) from Async(default) in 69.2ms
+  Rendering orders/show.html.erb within layouts/application
+  [1m[36mActiveStorage::Attachment Load (0.6ms)[0m  [1m[34mSELECT  `active_storage_attachments`.* FROM `active_storage_attachments` WHERE `active_storage_attachments`.`record_id` = 5 AND `active_storage_attachments`.`record_type` = 'Order' AND `active_storage_attachments`.`name` = 'image' LIMIT 1[0m
+  ↳ app/views/orders/show.html.erb:9
+  [1m[36mActiveStorage::Blob Load (0.5ms)[0m  [1m[34mSELECT  `active_storage_blobs`.* FROM `active_storage_blobs` WHERE `active_storage_blobs`.`id` = 9 LIMIT 1[0m
+  ↳ app/views/orders/show.html.erb:9
+  Rendered orders/show.html.erb within layouts/application (7.0ms)
+Completed 200 OK in 74ms (Views: 41.0ms | ActiveRecord: 3.8ms)
+
+
+Started GET "/rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBEZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--6542e80c1f84800a3c62a63a4d7ab40b468f2b36/download.jpeg" for ::1 at 2020-01-30 17:53:10 +0530
+Processing by ActiveStorage::BlobsController#show as JPEG
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBEZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--6542e80c1f84800a3c62a63a4d7ab40b468f2b36", "filename"=>"download"}
+  [1m[36mActiveStorage::Blob Load (0.6ms)[0m  [1m[34mSELECT  `active_storage_blobs`.* FROM `active_storage_blobs` WHERE `active_storage_blobs`.`id` = 9 LIMIT 1[0m
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+[36m  Disk Storage (0.6ms) [0m[34mGenerated URL for file at key: WjqkvP5AMVhkFSdh73N8KF2R (http://localhost:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWRWMnB4YTNaUU5VRk5WbWhyUmxOa2FEY3pUamhMUmpKU0Jqb0dSVlE2RUdScGMzQnZjMmwwYVc5dVNTSkZhVzVzYVc1bE95Qm1hV3hsYm1GdFpUMGlaRzkzYm14dllXUXVhbkJsWnlJN0lHWnBiR1Z1WVcxbEtqMVZWRVl0T0NjblpHOTNibXh2WVdRdWFuQmxad1k3QmxRNkVXTnZiblJsYm5SZmRIbHdaVWtpRDJsdFlXZGxMMnB3WldjR093WlUiLCJleHAiOiIyMDIwLTAxLTMwVDEyOjI4OjEwLjk0NFoiLCJwdXIiOiJibG9iX2tleSJ9fQ==--e484680ab46304fc0590e0af07aa9fdeb2b5f411/download.jpeg?content_type=image%2Fjpeg&disposition=inline%3B+filename%3D%22download.jpeg%22%3B+filename%2A%3DUTF-8%27%27download.jpeg)[0m
+Redirected to http://localhost:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWRWMnB4YTNaUU5VRk5WbWhyUmxOa2FEY3pUamhMUmpKU0Jqb0dSVlE2RUdScGMzQnZjMmwwYVc5dVNTSkZhVzVzYVc1bE95Qm1hV3hsYm1GdFpUMGlaRzkzYm14dllXUXVhbkJsWnlJN0lHWnBiR1Z1WVcxbEtqMVZWRVl0T0NjblpHOTNibXh2WVdRdWFuQmxad1k3QmxRNkVXTnZiblJsYm5SZmRIbHdaVWtpRDJsdFlXZGxMMnB3WldjR093WlUiLCJleHAiOiIyMDIwLTAxLTMwVDEyOjI4OjEwLjk0NFoiLCJwdXIiOiJibG9iX2tleSJ9fQ==--e484680ab46304fc0590e0af07aa9fdeb2b5f411/download.jpeg?content_type=image%2Fjpeg&disposition=inline%3B+filename%3D%22download.jpeg%22%3B+filename%2A%3DUTF-8%27%27download.jpeg
+Completed 302 Found in 4ms (ActiveRecord: 0.6ms)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWRWMnB4YTNaUU5VRk5WbWhyUmxOa2FEY3pUamhMUmpKU0Jqb0dSVlE2RUdScGMzQnZjMmwwYVc5dVNTSkZhVzVzYVc1bE95Qm1hV3hsYm1GdFpUMGlaRzkzYm14dllXUXVhbkJsWnlJN0lHWnBiR1Z1WVcxbEtqMVZWRVl0T0NjblpHOTNibXh2WVdRdWFuQmxad1k3QmxRNkVXTnZiblJsYm5SZmRIbHdaVWtpRDJsdFlXZGxMMnB3WldjR093WlUiLCJleHAiOiIyMDIwLTAxLTMwVDEyOjI4OjEwLjk0NFoiLCJwdXIiOiJibG9iX2tleSJ9fQ==--e484680ab46304fc0590e0af07aa9fdeb2b5f411/download.jpeg?content_type=image%2Fjpeg&disposition=inline%3B+filename%3D%22download.jpeg%22%3B+filename%2A%3DUTF-8%27%27download.jpeg" for ::1 at 2020-01-30 17:53:10 +0530
+Processing by ActiveStorage::DiskController#show as JPEG
+  Parameters: {"content_type"=>"image/jpeg", "disposition"=>"inline; filename=\"download.jpeg\"; filename*=UTF-8''download.jpeg", "encoded_key"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWRWMnB4YTNaUU5VRk5WbWhyUmxOa2FEY3pUamhMUmpKU0Jqb0dSVlE2RUdScGMzQnZjMmwwYVc5dVNTSkZhVzVzYVc1bE95Qm1hV3hsYm1GdFpUMGlaRzkzYm14dllXUXVhbkJsWnlJN0lHWnBiR1Z1WVcxbEtqMVZWRVl0T0NjblpHOTNibXh2WVdRdWFuQmxad1k3QmxRNkVXTnZiblJsYm5SZmRIbHdaVWtpRDJsdFlXZGxMMnB3WldjR093WlUiLCJleHAiOiIyMDIwLTAxLTMwVDEyOjI4OjEwLjk0NFoiLCJwdXIiOiJibG9iX2tleSJ9fQ==--e484680ab46304fc0590e0af07aa9fdeb2b5f411", "filename"=>"download"}
+Completed 200 OK in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/orders/5/edit" for ::1 at 2020-01-30 17:53:15 +0530
+Processing by OrdersController#edit as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mOrder Load (2.2ms)[0m  [1m[34mSELECT  `orders`.* FROM `orders` WHERE `orders`.`id` = 5 LIMIT 1[0m
+  ↳ app/controllers/orders_controller.rb:72
+  Rendering orders/edit.html.erb within layouts/application
+  Rendered orders/_form.html.erb (5.2ms)
+  Rendered orders/edit.html.erb within layouts/application (7.1ms)
+Completed 200 OK in 50ms (Views: 35.4ms | ActiveRecord: 2.8ms)
+
+
+Started GET "/orders/5" for ::1 at 2020-01-30 17:53:18 +0530
+Processing by OrdersController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mOrder Load (2.5ms)[0m  [1m[34mSELECT  `orders`.* FROM `orders` WHERE `orders`.`id` = 5 LIMIT 1[0m
+  ↳ app/controllers/orders_controller.rb:72
+  Rendering orders/show.html.erb within layouts/application
+  [1m[36mActiveStorage::Attachment Load (2.4ms)[0m  [1m[34mSELECT  `active_storage_attachments`.* FROM `active_storage_attachments` WHERE `active_storage_attachments`.`record_id` = 5 AND `active_storage_attachments`.`record_type` = 'Order' AND `active_storage_attachments`.`name` = 'image' LIMIT 1[0m
+  ↳ app/views/orders/show.html.erb:9
+  [1m[36mActiveStorage::Blob Load (2.2ms)[0m  [1m[34mSELECT  `active_storage_blobs`.* FROM `active_storage_blobs` WHERE `active_storage_blobs`.`id` = 9 LIMIT 1[0m
+  ↳ app/views/orders/show.html.erb:9
+  Rendered orders/show.html.erb within layouts/application (11.4ms)
+Completed 200 OK in 56ms (Views: 43.9ms | ActiveRecord: 7.7ms)
+
+
+Started GET "/orders" for ::1 at 2020-01-30 17:53:22 +0530
+Processing by OrdersController#index as HTML
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+  Rendering orders/index.html.erb within layouts/application
+  Rendered orders/index.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 35ms (Views: 29.8ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/orders" for ::1 at 2020-01-30 17:57:21 +0530
+Processing by OrdersController#index as HTML
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+  Rendering orders/index.html.erb within layouts/application
+  Rendered orders/index.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 110ms (Views: 62.9ms | ActiveRecord: 19.0ms)
+
+
+Started GET "/" for ::1 at 2020-01-30 17:57:26 +0530
+  
+ActionController::RoutingError (uninitialized constant UsersController):
+  
+bootsnap (1.4.5) lib/bootsnap/load_path_cache/core_ext/active_support.rb:79:in `block in load_missing_constant'
+bootsnap (1.4.5) lib/bootsnap/load_path_cache/core_ext/active_support.rb:8:in `without_bootsnap_cache'
+bootsnap (1.4.5) lib/bootsnap/load_path_cache/core_ext/active_support.rb:79:in `rescue in load_missing_constant'
+bootsnap (1.4.5) lib/bootsnap/load_path_cache/core_ext/active_support.rb:58:in `load_missing_constant'
+activesupport (5.2.4.1) lib/active_support/inflector/methods.rb:283:in `const_get'
+activesupport (5.2.4.1) lib/active_support/inflector/methods.rb:283:in `block in constantize'
+activesupport (5.2.4.1) lib/active_support/inflector/methods.rb:281:in `each'
+activesupport (5.2.4.1) lib/active_support/inflector/methods.rb:281:in `inject'
+activesupport (5.2.4.1) lib/active_support/inflector/methods.rb:281:in `constantize'
+actionpack (5.2.4.1) lib/action_dispatch/http/request.rb:88:in `controller_class_for'
+actionpack (5.2.4.1) lib/action_dispatch/http/request.rb:81:in `controller_class'
+actionpack (5.2.4.1) lib/action_dispatch/routing/route_set.rb:46:in `controller'
+actionpack (5.2.4.1) lib/action_dispatch/routing/route_set.rb:32:in `serve'
+actionpack (5.2.4.1) lib/action_dispatch/journey/router.rb:52:in `block in serve'
+actionpack (5.2.4.1) lib/action_dispatch/journey/router.rb:35:in `each'
+actionpack (5.2.4.1) lib/action_dispatch/journey/router.rb:35:in `serve'
+actionpack (5.2.4.1) lib/action_dispatch/routing/route_set.rb:840:in `call'
+warden (1.2.8) lib/warden/manager.rb:36:in `block in call'
+warden (1.2.8) lib/warden/manager.rb:34:in `catch'
+warden (1.2.8) lib/warden/manager.rb:34:in `call'
+rack (2.1.2) lib/rack/tempfile_reaper.rb:17:in `call'
+rack (2.1.2) lib/rack/etag.rb:27:in `call'
+rack (2.1.2) lib/rack/conditional_get.rb:27:in `call'
+rack (2.1.2) lib/rack/head.rb:14:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.1.2) lib/rack/session/abstract/id.rb:269:in `context'
+rack (2.1.2) lib/rack/session/abstract/id.rb:263:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/cookies.rb:670:in `call'
+activerecord (5.2.4.1) lib/active_record/migration.rb:559:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.4.1) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.4.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.4.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.4.1) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.4.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.4.1) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.4.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.1.2) lib/rack/method_override.rb:24:in `call'
+rack (2.1.2) lib/rack/runtime.rb:24:in `call'
+activesupport (5.2.4.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.1.2) lib/rack/sendfile.rb:113:in `call'
+railties (5.2.4.1) lib/rails/engine.rb:524:in `call'
+puma (3.12.2) lib/puma/configuration.rb:227:in `call'
+puma (3.12.2) lib/puma/server.rb:674:in `handle_request'
+puma (3.12.2) lib/puma/server.rb:476:in `process_client'
+puma (3.12.2) lib/puma/server.rb:334:in `block in run'
+puma (3.12.2) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/" for ::1 at 2020-01-30 17:58:15 +0530
+Processing by OrdersController#show as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+Completed 404 Not Found in 32ms (ActiveRecord: 4.5ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Order without an ID):
+  
+app/controllers/orders_controller.rb:72:in `set_order'
+Started GET "/1" for ::1 at 2020-01-30 17:58:40 +0530
+  
+ActionController::RoutingError (No route matches [GET] "/1"):
+  
+actionpack (5.2.4.1) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.4.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.4.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.4.1) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.4.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.4.1) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.4.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.1.2) lib/rack/method_override.rb:24:in `call'
+rack (2.1.2) lib/rack/runtime.rb:24:in `call'
+activesupport (5.2.4.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.1.2) lib/rack/sendfile.rb:113:in `call'
+railties (5.2.4.1) lib/rails/engine.rb:524:in `call'
+puma (3.12.2) lib/puma/configuration.rb:227:in `call'
+puma (3.12.2) lib/puma/server.rb:674:in `handle_request'
+puma (3.12.2) lib/puma/server.rb:476:in `process_client'
+puma (3.12.2) lib/puma/server.rb:334:in `block in run'
+puma (3.12.2) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/1" for ::1 at 2020-01-30 17:59:21 +0530
+  
+ActionController::RoutingError (No route matches [GET] "/1"):
+  
+actionpack (5.2.4.1) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.4.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.4.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.4.1) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.4.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.4.1) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.4.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.1.2) lib/rack/method_override.rb:24:in `call'
+rack (2.1.2) lib/rack/runtime.rb:24:in `call'
+activesupport (5.2.4.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.1.2) lib/rack/sendfile.rb:113:in `call'
+railties (5.2.4.1) lib/rails/engine.rb:524:in `call'
+puma (3.12.2) lib/puma/configuration.rb:227:in `call'
+puma (3.12.2) lib/puma/server.rb:674:in `handle_request'
+puma (3.12.2) lib/puma/server.rb:476:in `process_client'
+puma (3.12.2) lib/puma/server.rb:334:in `block in run'
+puma (3.12.2) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/1" for ::1 at 2020-01-30 18:00:22 +0530
+  
+ActionController::RoutingError (No route matches [GET] "/1"):
+  
+actionpack (5.2.4.1) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.4.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.4.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.4.1) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.4.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.4.1) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.4.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.1.2) lib/rack/method_override.rb:24:in `call'
+rack (2.1.2) lib/rack/runtime.rb:24:in `call'
+activesupport (5.2.4.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.1.2) lib/rack/sendfile.rb:113:in `call'
+railties (5.2.4.1) lib/rails/engine.rb:524:in `call'
+puma (3.12.2) lib/puma/configuration.rb:227:in `call'
+puma (3.12.2) lib/puma/server.rb:674:in `handle_request'
+puma (3.12.2) lib/puma/server.rb:476:in `process_client'
+puma (3.12.2) lib/puma/server.rb:334:in `block in run'
+puma (3.12.2) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/1" for ::1 at 2020-01-30 18:00:59 +0530
+  
+ActionController::RoutingError (No route matches [GET] "/1"):
+  
+actionpack (5.2.4.1) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.4.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.4.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.4.1) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.4.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.4.1) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.4.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.1.2) lib/rack/method_override.rb:24:in `call'
+rack (2.1.2) lib/rack/runtime.rb:24:in `call'
+activesupport (5.2.4.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.1.2) lib/rack/sendfile.rb:113:in `call'
+railties (5.2.4.1) lib/rails/engine.rb:524:in `call'
+puma (3.12.2) lib/puma/configuration.rb:227:in `call'
+puma (3.12.2) lib/puma/server.rb:674:in `handle_request'
+puma (3.12.2) lib/puma/server.rb:476:in `process_client'
+puma (3.12.2) lib/puma/server.rb:334:in `block in run'
+puma (3.12.2) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/" for ::1 at 2020-01-30 18:01:16 +0530
+Processing by Devise::RegistrationsController#create as HTML
+[Devise] Could not find devise mapping for path "/".
+This may happen for two reasons:
+
+1) You forgot to wrap your route inside the scope block. For example:
+
+  devise_scope :user do
+    get "/some/route" => "some_devise_controller"
+  end
+
+2) You are testing a Devise controller bypassing the router.
+   If so, you can explicitly tell Devise which mapping to use:
+
+   @request.env["devise.mapping"] = Devise.mappings[:user]
+
+
+Completed 404 Not Found in 1ms (ActiveRecord: 0.0ms)
+
+
+  
+AbstractController::ActionNotFound (Could not find devise mapping for path "/".
+This may happen for two reasons:
+
+1) You forgot to wrap your route inside the scope block. For example:
+
+  devise_scope :user do
+    get "/some/route" => "some_devise_controller"
+  end
+
+2) You are testing a Devise controller bypassing the router.
+   If so, you can explicitly tell Devise which mapping to use:
+
+   @request.env["devise.mapping"] = Devise.mappings[:user]
+
+):
+  
+devise (4.7.1) app/controllers/devise_controller.rb:90:in `unknown_action!'
+devise (4.7.1) app/controllers/devise_controller.rb:65:in `assert_is_devise_resource!'
+devise (4.7.1) app/controllers/devise_controller.rb:103:in `require_no_authentication'
+activesupport (5.2.4.1) lib/active_support/callbacks.rb:426:in `block in make_lambda'
+activesupport (5.2.4.1) lib/active_support/callbacks.rb:179:in `block (2 levels) in halting_and_conditional'
+actionpack (5.2.4.1) lib/abstract_controller/callbacks.rb:34:in `block (2 levels) in <module:Callbacks>'
+activesupport (5.2.4.1) lib/active_support/callbacks.rb:180:in `block in halting_and_conditional'
+activesupport (5.2.4.1) lib/active_support/callbacks.rb:513:in `block in invoke_before'
+activesupport (5.2.4.1) lib/active_support/callbacks.rb:513:in `each'
+activesupport (5.2.4.1) lib/active_support/callbacks.rb:513:in `invoke_before'
+activesupport (5.2.4.1) lib/active_support/callbacks.rb:131:in `run_callbacks'
+actionpack (5.2.4.1) lib/abstract_controller/callbacks.rb:41:in `process_action'
+actionpack (5.2.4.1) lib/action_controller/metal/rescue.rb:22:in `process_action'
+actionpack (5.2.4.1) lib/action_controller/metal/instrumentation.rb:34:in `block in process_action'
+activesupport (5.2.4.1) lib/active_support/notifications.rb:168:in `block in instrument'
+activesupport (5.2.4.1) lib/active_support/notifications/instrumenter.rb:23:in `instrument'
+activesupport (5.2.4.1) lib/active_support/notifications.rb:168:in `instrument'
+actionpack (5.2.4.1) lib/action_controller/metal/instrumentation.rb:32:in `process_action'
+actionpack (5.2.4.1) lib/action_controller/metal/params_wrapper.rb:256:in `process_action'
+activerecord (5.2.4.1) lib/active_record/railties/controller_runtime.rb:24:in `process_action'
+actionpack (5.2.4.1) lib/abstract_controller/base.rb:134:in `process'
+actionview (5.2.4.1) lib/action_view/rendering.rb:32:in `process'
+actionpack (5.2.4.1) lib/action_controller/metal.rb:191:in `dispatch'
+actionpack (5.2.4.1) lib/action_controller/metal.rb:252:in `dispatch'
+actionpack (5.2.4.1) lib/action_dispatch/routing/route_set.rb:52:in `dispatch'
+actionpack (5.2.4.1) lib/action_dispatch/routing/route_set.rb:34:in `serve'
+actionpack (5.2.4.1) lib/action_dispatch/journey/router.rb:52:in `block in serve'
+actionpack (5.2.4.1) lib/action_dispatch/journey/router.rb:35:in `each'
+actionpack (5.2.4.1) lib/action_dispatch/journey/router.rb:35:in `serve'
+actionpack (5.2.4.1) lib/action_dispatch/routing/route_set.rb:840:in `call'
+warden (1.2.8) lib/warden/manager.rb:36:in `block in call'
+warden (1.2.8) lib/warden/manager.rb:34:in `catch'
+warden (1.2.8) lib/warden/manager.rb:34:in `call'
+rack (2.1.2) lib/rack/tempfile_reaper.rb:17:in `call'
+rack (2.1.2) lib/rack/etag.rb:27:in `call'
+rack (2.1.2) lib/rack/conditional_get.rb:27:in `call'
+rack (2.1.2) lib/rack/head.rb:14:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.1.2) lib/rack/session/abstract/id.rb:269:in `context'
+rack (2.1.2) lib/rack/session/abstract/id.rb:263:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/cookies.rb:670:in `call'
+activerecord (5.2.4.1) lib/active_record/migration.rb:559:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.4.1) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.4.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.4.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.4.1) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.4.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.4.1) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.4.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.1.2) lib/rack/method_override.rb:24:in `call'
+rack (2.1.2) lib/rack/runtime.rb:24:in `call'
+activesupport (5.2.4.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.1.2) lib/rack/sendfile.rb:113:in `call'
+railties (5.2.4.1) lib/rails/engine.rb:524:in `call'
+puma (3.12.2) lib/puma/configuration.rb:227:in `call'
+puma (3.12.2) lib/puma/server.rb:674:in `handle_request'
+puma (3.12.2) lib/puma/server.rb:476:in `process_client'
+puma (3.12.2) lib/puma/server.rb:334:in `block in run'
+puma (3.12.2) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/" for ::1 at 2020-01-30 18:01:40 +0530
+  
+ActionController::RoutingError (uninitialized constant UsersController):
+  
+bootsnap (1.4.5) lib/bootsnap/load_path_cache/core_ext/active_support.rb:79:in `block in load_missing_constant'
+bootsnap (1.4.5) lib/bootsnap/load_path_cache/core_ext/active_support.rb:8:in `without_bootsnap_cache'
+bootsnap (1.4.5) lib/bootsnap/load_path_cache/core_ext/active_support.rb:79:in `rescue in load_missing_constant'
+bootsnap (1.4.5) lib/bootsnap/load_path_cache/core_ext/active_support.rb:58:in `load_missing_constant'
+activesupport (5.2.4.1) lib/active_support/inflector/methods.rb:283:in `const_get'
+activesupport (5.2.4.1) lib/active_support/inflector/methods.rb:283:in `block in constantize'
+activesupport (5.2.4.1) lib/active_support/inflector/methods.rb:281:in `each'
+activesupport (5.2.4.1) lib/active_support/inflector/methods.rb:281:in `inject'
+activesupport (5.2.4.1) lib/active_support/inflector/methods.rb:281:in `constantize'
+actionpack (5.2.4.1) lib/action_dispatch/http/request.rb:88:in `controller_class_for'
+actionpack (5.2.4.1) lib/action_dispatch/http/request.rb:81:in `controller_class'
+actionpack (5.2.4.1) lib/action_dispatch/routing/route_set.rb:46:in `controller'
+actionpack (5.2.4.1) lib/action_dispatch/routing/route_set.rb:32:in `serve'
+actionpack (5.2.4.1) lib/action_dispatch/journey/router.rb:52:in `block in serve'
+actionpack (5.2.4.1) lib/action_dispatch/journey/router.rb:35:in `each'
+actionpack (5.2.4.1) lib/action_dispatch/journey/router.rb:35:in `serve'
+actionpack (5.2.4.1) lib/action_dispatch/routing/route_set.rb:840:in `call'
+warden (1.2.8) lib/warden/manager.rb:36:in `block in call'
+warden (1.2.8) lib/warden/manager.rb:34:in `catch'
+warden (1.2.8) lib/warden/manager.rb:34:in `call'
+rack (2.1.2) lib/rack/tempfile_reaper.rb:17:in `call'
+rack (2.1.2) lib/rack/etag.rb:27:in `call'
+rack (2.1.2) lib/rack/conditional_get.rb:27:in `call'
+rack (2.1.2) lib/rack/head.rb:14:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.1.2) lib/rack/session/abstract/id.rb:269:in `context'
+rack (2.1.2) lib/rack/session/abstract/id.rb:263:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/cookies.rb:670:in `call'
+activerecord (5.2.4.1) lib/active_record/migration.rb:559:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.4.1) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.4.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.4.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.4.1) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.4.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.4.1) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.4.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.1.2) lib/rack/method_override.rb:24:in `call'
+rack (2.1.2) lib/rack/runtime.rb:24:in `call'
+activesupport (5.2.4.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.1.2) lib/rack/sendfile.rb:113:in `call'
+railties (5.2.4.1) lib/rails/engine.rb:524:in `call'
+puma (3.12.2) lib/puma/configuration.rb:227:in `call'
+puma (3.12.2) lib/puma/server.rb:674:in `handle_request'
+puma (3.12.2) lib/puma/server.rb:476:in `process_client'
+puma (3.12.2) lib/puma/server.rb:334:in `block in run'
+puma (3.12.2) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/" for ::1 at 2020-01-30 18:02:04 +0530
+Processing by OrdersController#index as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+  Rendering orders/index.html.erb within layouts/application
+  Rendered orders/index.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 80ms (Views: 46.6ms | ActiveRecord: 4.0ms)
+
+
+Started GET "/orders/new" for ::1 at 2020-01-30 18:02:13 +0530
+Processing by OrdersController#new as HTML
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+  Rendering orders/new.html.erb within layouts/application
+  Rendered orders/_form.html.erb (4.7ms)
+  Rendered orders/new.html.erb within layouts/application (6.1ms)
+Completed 200 OK in 41ms (Views: 24.9ms | ActiveRecord: 4.1ms)
+
+
+Started GET "/orders/new" for ::1 at 2020-01-30 18:02:15 +0530
+Processing by OrdersController#new as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+  Rendering orders/new.html.erb within layouts/application
+  Rendered orders/_form.html.erb (7.6ms)
+  Rendered orders/new.html.erb within layouts/application (10.0ms)
+Completed 200 OK in 43ms (Views: 38.6ms | ActiveRecord: 0.6ms)
+
+
+Started POST "/orders" for ::1 at 2020-01-30 18:02:18 +0530
+Processing by OrdersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"581EGqRAc3gi36vZPxM+XatUDH8gIcxgfrnAA9X2yfEnV0u92TQSY0UV2Uy+2pPhDsNTCloSXeueymVOpCfd6w==", "order"=>{"Name"=>"", "Description"=>"", "Age"=>"", "Cost"=>"", "Address"=>""}, "commit"=>"Create Order"}
+  [1m[36mUser Load (2.1ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+  [1m[35m (1.6ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/orders_controller.rb:32
+  [1m[36mOrder Create (4.0ms)[0m  [1m[32mINSERT INTO `orders` (`Name`, `Description`, `Address`, `created_at`, `updated_at`, `user_id`) VALUES ('', '', '', '2020-01-30 12:32:18', '2020-01-30 12:32:18', 1)[0m
+  ↳ app/controllers/orders_controller.rb:32
+  [1m[35m (101.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/orders_controller.rb:32
+Redirected to http://localhost:3000/orders/6
+Completed 302 Found in 127ms (ActiveRecord: 108.7ms)
+
+
+Started GET "/orders/6" for ::1 at 2020-01-30 18:02:18 +0530
+Processing by OrdersController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mUser Load (1.7ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mOrder Load (0.8ms)[0m  [1m[34mSELECT  `orders`.* FROM `orders` WHERE `orders`.`id` = 6 LIMIT 1[0m
+  ↳ app/controllers/orders_controller.rb:72
+  Rendering orders/show.html.erb within layouts/application
+  [1m[36mActiveStorage::Attachment Load (0.6ms)[0m  [1m[34mSELECT  `active_storage_attachments`.* FROM `active_storage_attachments` WHERE `active_storage_attachments`.`record_id` = 6 AND `active_storage_attachments`.`record_type` = 'Order' AND `active_storage_attachments`.`name` = 'image' LIMIT 1[0m
+  ↳ app/views/orders/show.html.erb:9
+  Rendered orders/show.html.erb within layouts/application (21.6ms)
+Completed 200 OK in 54ms (Views: 43.3ms | ActiveRecord: 3.8ms)
+
+
+Started POST "/orders" for ::1 at 2020-01-30 18:02:25 +0530
+Processing by OrdersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"TaRW0UOS/+0wtriWFUn4bw2zfysHpMxSDyagzwKnXzTi5Dxg7F/aRYSDwrHqeYXU1/TK74NpRWSF6pDHfNpWXg==", "order"=>{"Name"=>"", "Description"=>"", "Age"=>"", "Cost"=>"", "Address"=>""}, "commit"=>"Create Order"}
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/orders_controller.rb:32
+  [1m[36mOrder Create (0.6ms)[0m  [1m[32mINSERT INTO `orders` (`Name`, `Description`, `Address`, `created_at`, `updated_at`, `user_id`) VALUES ('', '', '', '2020-01-30 12:32:25', '2020-01-30 12:32:25', 1)[0m
+  ↳ app/controllers/orders_controller.rb:32
+  [1m[35m (38.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/orders_controller.rb:32
+Redirected to http://localhost:3000/orders/7
+Completed 302 Found in 54ms (ActiveRecord: 40.5ms)
+
+
+Started GET "/orders/7" for ::1 at 2020-01-30 18:02:25 +0530
+Processing by OrdersController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mUser Load (3.5ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mOrder Load (0.5ms)[0m  [1m[34mSELECT  `orders`.* FROM `orders` WHERE `orders`.`id` = 7 LIMIT 1[0m
+  ↳ app/controllers/orders_controller.rb:72
+  Rendering orders/show.html.erb within layouts/application
+  [1m[36mActiveStorage::Attachment Load (0.7ms)[0m  [1m[34mSELECT  `active_storage_attachments`.* FROM `active_storage_attachments` WHERE `active_storage_attachments`.`record_id` = 7 AND `active_storage_attachments`.`record_type` = 'Order' AND `active_storage_attachments`.`name` = 'image' LIMIT 1[0m
+  ↳ app/views/orders/show.html.erb:9
+  Rendered orders/show.html.erb within layouts/application (5.2ms)
+Completed 200 OK in 40ms (Views: 28.4ms | ActiveRecord: 4.6ms)
+
+
+Started GET "/orders/7/edit" for ::1 at 2020-01-30 18:02:27 +0530
+Processing by OrdersController#edit as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mOrder Load (0.5ms)[0m  [1m[34mSELECT  `orders`.* FROM `orders` WHERE `orders`.`id` = 7 LIMIT 1[0m
+  ↳ app/controllers/orders_controller.rb:72
+  Rendering orders/edit.html.erb within layouts/application
+  Rendered orders/_form.html.erb (12.2ms)
+  Rendered orders/edit.html.erb within layouts/application (14.3ms)
+Completed 200 OK in 69ms (Views: 60.9ms | ActiveRecord: 1.6ms)
+
+
+Started PATCH "/orders/7" for ::1 at 2020-01-30 18:02:28 +0530
+Processing by OrdersController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"fj2NnMzzXhXXEJuYFeo9TFCPuRKx4hVR4WOZDu0JFKoJcMxyR+gsSK+XxpN9B4eDQG9T2DF9O3UZ+tnE8/3hng==", "order"=>{"Name"=>"", "Description"=>"", "Age"=>"", "Cost"=>"", "Address"=>""}, "commit"=>"Update Order", "id"=>"7"}
+  [1m[36mUser Load (2.5ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mOrder Load (1.3ms)[0m  [1m[34mSELECT  `orders`.* FROM `orders` WHERE `orders`.`id` = 7 LIMIT 1[0m
+  ↳ app/controllers/orders_controller.rb:72
+  [1m[36mActiveStorage::Attachment Load (0.9ms)[0m  [1m[34mSELECT  `active_storage_attachments`.* FROM `active_storage_attachments` WHERE `active_storage_attachments`.`record_id` = 7 AND `active_storage_attachments`.`record_type` = 'Order' AND `active_storage_attachments`.`name` = 'image' LIMIT 1[0m
+  ↳ app/controllers/orders_controller.rb:45
+Completed 500 Internal Server Error in 336ms (ActiveRecord: 4.7ms)
+
+
+  
+NameError (undefined local variable or method `post_params' for #<OrdersController:0x00007f038c1ca980>
+Did you mean?  to_param):
+  
+app/controllers/orders_controller.rb:46:in `update'
+Started PATCH "/orders/7" for ::1 at 2020-01-30 18:02:40 +0530
+Processing by OrdersController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"VdzSkyc31s/4InTwk0dZcGYvy+9r3kD/A86F2Ikiw6v6nLgiiPrzZ0wXDtdsdyTLvGh+K+8TycmJArXQ91/KwQ==", "order"=>{"Name"=>"", "image"=>#<ActionDispatch::Http::UploadedFile:0x000055812a5adfd8 @tempfile=#<Tempfile:/tmp/RackMultipart20200130-10870-tx8arh.jpg>, @original_filename="apple.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"order[image]\"; filename=\"apple.jpg\"\r\nContent-Type: image/jpeg\r\n">, "Description"=>"", "Age"=>"", "Cost"=>"", "Address"=>""}, "commit"=>"Update Order", "id"=>"7"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mOrder Load (1.8ms)[0m  [1m[34mSELECT  `orders`.* FROM `orders` WHERE `orders`.`id` = 7 LIMIT 1[0m
+  ↳ app/controllers/orders_controller.rb:72
+  [1m[36mActiveStorage::Attachment Load (0.5ms)[0m  [1m[34mSELECT  `active_storage_attachments`.* FROM `active_storage_attachments` WHERE `active_storage_attachments`.`record_id` = 7 AND `active_storage_attachments`.`record_type` = 'Order' AND `active_storage_attachments`.`name` = 'image' LIMIT 1[0m
+  ↳ app/controllers/orders_controller.rb:45
+Completed 500 Internal Server Error in 399ms (ActiveRecord: 2.8ms)
+
+
+  
+NameError (undefined local variable or method `post_params' for #<OrdersController:0x000055812a584138>
+Did you mean?  to_param):
+  
+app/controllers/orders_controller.rb:46:in `update'
+Started GET "/orders" for ::1 at 2020-01-30 18:03:04 +0530
+Processing by OrdersController#index as HTML
+  [1m[36mUser Load (1.8ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+  Rendering orders/index.html.erb within layouts/application
+  Rendered orders/index.html.erb within layouts/application (6.1ms)
+Completed 200 OK in 48ms (Views: 41.7ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/orders" for ::1 at 2020-01-30 18:03:13 +0530
+Processing by OrdersController#index as HTML
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+  Rendering orders/index.html.erb within layouts/application
+  Rendered orders/index.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 46ms (Views: 40.2ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/orders" for ::1 at 2020-01-30 18:03:26 +0530
+Processing by OrdersController#index as HTML
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2020-01-30 18:03:26 +0530
+Processing by Devise::SessionsController#new as HTML
+  Rendering /var/lib/gems/2.5.0/gems/devise-4.7.1/app/views/devise/sessions/new.html.erb within layouts/application
+  Rendered /var/lib/gems/2.5.0/gems/devise-4.7.1/app/views/devise/shared/_links.html.erb (1.6ms)
+  Rendered /var/lib/gems/2.5.0/gems/devise-4.7.1/app/views/devise/sessions/new.html.erb within layouts/application (5.9ms)
+Completed 200 OK in 38ms (Views: 34.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/" for ::1 at 2020-01-30 18:03:32 +0530
+  
+ActionController::RoutingError (No route matches [GET] "/users"):
+  
+actionpack (5.2.4.1) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.4.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.4.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.4.1) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.4.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.4.1) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.4.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.1.2) lib/rack/method_override.rb:24:in `call'
+rack (2.1.2) lib/rack/runtime.rb:24:in `call'
+activesupport (5.2.4.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.1.2) lib/rack/sendfile.rb:113:in `call'
+railties (5.2.4.1) lib/rails/engine.rb:524:in `call'
+puma (3.12.2) lib/puma/configuration.rb:227:in `call'
+puma (3.12.2) lib/puma/server.rb:674:in `handle_request'
+puma (3.12.2) lib/puma/server.rb:476:in `process_client'
+puma (3.12.2) lib/puma/server.rb:334:in `block in run'
+puma (3.12.2) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/users/sign_i" for ::1 at 2020-01-30 18:03:39 +0530
+  
+ActionController::RoutingError (No route matches [GET] "/users/sign_i"):
+  
+actionpack (5.2.4.1) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.4.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.4.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.4.1) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.4.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.4.1) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.4.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.1.2) lib/rack/method_override.rb:24:in `call'
+rack (2.1.2) lib/rack/runtime.rb:24:in `call'
+activesupport (5.2.4.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.1.2) lib/rack/sendfile.rb:113:in `call'
+railties (5.2.4.1) lib/rails/engine.rb:524:in `call'
+puma (3.12.2) lib/puma/configuration.rb:227:in `call'
+puma (3.12.2) lib/puma/server.rb:674:in `handle_request'
+puma (3.12.2) lib/puma/server.rb:476:in `process_client'
+puma (3.12.2) lib/puma/server.rb:334:in `block in run'
+puma (3.12.2) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/users/sign_in" for ::1 at 2020-01-30 18:03:44 +0530
+Processing by Devise::SessionsController#new as HTML
+  Rendering /var/lib/gems/2.5.0/gems/devise-4.7.1/app/views/devise/sessions/new.html.erb within layouts/application
+  Rendered /var/lib/gems/2.5.0/gems/devise-4.7.1/app/views/devise/shared/_links.html.erb (2.2ms)
+  Rendered /var/lib/gems/2.5.0/gems/devise-4.7.1/app/views/devise/sessions/new.html.erb within layouts/application (8.6ms)
+Completed 200 OK in 47ms (Views: 45.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/password/new" for ::1 at 2020-01-30 18:03:46 +0530
+Processing by Devise::PasswordsController#new as HTML
+  Rendering /var/lib/gems/2.5.0/gems/devise-4.7.1/app/views/devise/passwords/new.html.erb within layouts/application
+  Rendered /var/lib/gems/2.5.0/gems/devise-4.7.1/app/views/devise/shared/_error_messages.html.erb (0.9ms)
+  Rendered /var/lib/gems/2.5.0/gems/devise-4.7.1/app/views/devise/shared/_links.html.erb (1.3ms)
+  Rendered /var/lib/gems/2.5.0/gems/devise-4.7.1/app/views/devise/passwords/new.html.erb within layouts/application (10.4ms)
+Completed 200 OK in 44ms (Views: 33.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/password" for ::1 at 2020-01-30 18:03:56 +0530
+Processing by Devise::PasswordsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"6BRN12HjWiPjPmSZK8gIcDoEU3/SsI2w3zs+9IhxQUHhp2v3+phTLK9AZ+j2QOWnWorR2zcclQw3MwnL1T/EuQ==", "user"=>{"email"=>"akbhobhiya2000@gmail.com"}, "commit"=>"Send me reset password instructions"}
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'akbhobhiya2000@gmail.com' ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Load (58.2ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`reset_password_token` = '2fc45132ceb2d0087fdf1e97b61bebbb72413fe92a162defb6b5f7e886f8a982' ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Update (10.4ms)[0m  [1m[33mUPDATE `users` SET `reset_password_token` = '2fc45132ceb2d0087fdf1e97b61bebbb72413fe92a162defb6b5f7e886f8a982', `reset_password_sent_at` = '2020-01-30 12:33:56', `updated_at` = '2020-01-30 12:33:56' WHERE `users`.`id` = 1[0m
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+  [1m[35m (48.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+  Rendering /var/lib/gems/2.5.0/gems/devise-4.7.1/app/views/devise/mailer/reset_password_instructions.html.erb
+  Rendered /var/lib/gems/2.5.0/gems/devise-4.7.1/app/views/devise/mailer/reset_password_instructions.html.erb (3.4ms)
+Devise::Mailer#reset_password_instructions: processed outbound mail in 44.6ms
+Completed 500 Internal Server Error in 687ms (ActiveRecord: 118.8ms)
+
+
+  
+ActionView::Template::Error (Missing host to link to! Please provide the :host parameter, set default_url_options[:host], or set :only_path to true):
+    2: 
+    3: <p>Someone has requested a link to change your password. You can do this through the link below.</p>
+    4: 
+    5: <p><%= link_to 'Change my password', edit_password_url(@resource, reset_password_token: @token) %></p>
+    6: 
+    7: <p>If you didn't request this, please ignore this email.</p>
+    8: <p>Your password won't change until you access the link above and create a new one.</p>
+  
+actionpack (5.2.4.1) lib/action_dispatch/http/url.rb:63:in `full_url_for'
+actionpack (5.2.4.1) lib/action_dispatch/http/url.rb:53:in `url_for'
+actionpack (5.2.4.1) lib/action_dispatch/routing/route_set.rb:339:in `block in <class:RouteSet>'
+actionpack (5.2.4.1) lib/action_dispatch/routing/route_set.rb:834:in `url_for'
+actionpack (5.2.4.1) lib/action_dispatch/routing/route_set.rb:273:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/routing/route_set.rb:214:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/routing/route_set.rb:331:in `block (2 levels) in define_url_helper'
+actionpack (5.2.4.1) lib/action_dispatch/routing/routes_proxy.rb:45:in `edit_user_password_url'
+actionpack (5.2.4.1) lib/action_dispatch/routing/routes_proxy.rb:48:in `public_send'
+actionpack (5.2.4.1) lib/action_dispatch/routing/routes_proxy.rb:48:in `method_missing'
+devise (4.7.1) lib/devise/controllers/url_helpers.rb:53:in `block (4 levels) in generate_helpers!'
+devise (4.7.1) app/views/devise/mailer/reset_password_instructions.html.erb:5:in `__var_lib_gems_______gems_devise_______app_views_devise_mailer_reset_password_instructions_html_erb__182789390969769505_69826806813060'
+actionview (5.2.4.1) lib/action_view/template.rb:159:in `block in render'
+activesupport (5.2.4.1) lib/active_support/notifications.rb:170:in `instrument'
+actionview (5.2.4.1) lib/action_view/template.rb:354:in `instrument_render_template'
+actionview (5.2.4.1) lib/action_view/template.rb:157:in `render'
+actionview (5.2.4.1) lib/action_view/renderer/template_renderer.rb:54:in `block (2 levels) in render_template'
+actionview (5.2.4.1) lib/action_view/renderer/abstract_renderer.rb:44:in `block in instrument'
+activesupport (5.2.4.1) lib/active_support/notifications.rb:168:in `block in instrument'
+activesupport (5.2.4.1) lib/active_support/notifications/instrumenter.rb:23:in `instrument'
+activesupport (5.2.4.1) lib/active_support/notifications.rb:168:in `instrument'
+actionview (5.2.4.1) lib/action_view/renderer/abstract_renderer.rb:43:in `instrument'
+actionview (5.2.4.1) lib/action_view/renderer/template_renderer.rb:53:in `block in render_template'
+actionview (5.2.4.1) lib/action_view/renderer/template_renderer.rb:61:in `render_with_layout'
+actionview (5.2.4.1) lib/action_view/renderer/template_renderer.rb:52:in `render_template'
+actionview (5.2.4.1) lib/action_view/renderer/template_renderer.rb:16:in `render'
+actionview (5.2.4.1) lib/action_view/renderer/renderer.rb:44:in `render_template'
+actionview (5.2.4.1) lib/action_view/renderer/renderer.rb:25:in `render'
+actionview (5.2.4.1) lib/action_view/rendering.rb:103:in `_render_template'
+actionview (5.2.4.1) lib/action_view/rendering.rb:84:in `render_to_body'
+actionpack (5.2.4.1) lib/abstract_controller/rendering.rb:25:in `render'
+actionmailer (5.2.4.1) lib/action_mailer/base.rb:943:in `block in collect_responses_from_templates'
+actionmailer (5.2.4.1) lib/action_mailer/base.rb:940:in `each'
+actionmailer (5.2.4.1) lib/action_mailer/base.rb:940:in `each'
+actionmailer (5.2.4.1) lib/action_mailer/base.rb:940:in `map'
+actionmailer (5.2.4.1) lib/action_mailer/base.rb:940:in `collect_responses_from_templates'
+actionmailer (5.2.4.1) lib/action_mailer/base.rb:925:in `collect_responses'
+actionmailer (5.2.4.1) lib/action_mailer/base.rb:828:in `mail'
+devise (4.7.1) lib/devise/mailers/helpers.rb:19:in `devise_mail'
+devise (4.7.1) app/mailers/devise/mailer.rb:14:in `reset_password_instructions'
+actionpack (5.2.4.1) lib/abstract_controller/base.rb:194:in `process_action'
+actionpack (5.2.4.1) lib/abstract_controller/callbacks.rb:42:in `block in process_action'
+activesupport (5.2.4.1) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.4.1) lib/abstract_controller/callbacks.rb:41:in `process_action'
+actionpack (5.2.4.1) lib/abstract_controller/base.rb:134:in `process'
+actionmailer (5.2.4.1) lib/action_mailer/rescuable.rb:25:in `block in process'
+actionmailer (5.2.4.1) lib/action_mailer/rescuable.rb:17:in `handle_exceptions'
+actionmailer (5.2.4.1) lib/action_mailer/rescuable.rb:24:in `process'
+actionview (5.2.4.1) lib/action_view/rendering.rb:32:in `process'
+actionmailer (5.2.4.1) lib/action_mailer/base.rb:607:in `block in process'
+activesupport (5.2.4.1) lib/active_support/notifications.rb:168:in `block in instrument'
+activesupport (5.2.4.1) lib/active_support/notifications/instrumenter.rb:23:in `instrument'
+activesupport (5.2.4.1) lib/active_support/notifications.rb:168:in `instrument'
+actionmailer (5.2.4.1) lib/action_mailer/base.rb:606:in `process'
+actionmailer (5.2.4.1) lib/action_mailer/message_delivery.rb:123:in `block in processed_mailer'
+actionmailer (5.2.4.1) lib/action_mailer/message_delivery.rb:122:in `tap'
+actionmailer (5.2.4.1) lib/action_mailer/message_delivery.rb:122:in `processed_mailer'
+actionmailer (5.2.4.1) lib/action_mailer/message_delivery.rb:113:in `deliver_now'
+devise (4.7.1) lib/devise/models/authenticatable.rb:199:in `send_devise_notification'
+devise (4.7.1) lib/devise/models/recoverable.rb:99:in `send_reset_password_instructions_notification'
+devise (4.7.1) lib/devise/models/recoverable.rb:52:in `send_reset_password_instructions'
+devise (4.7.1) lib/devise/models/recoverable.rb:136:in `send_reset_password_instructions'
+devise (4.7.1) app/controllers/devise/passwords_controller.rb:15:in `create'
+actionpack (5.2.4.1) lib/action_controller/metal/basic_implicit_render.rb:6:in `send_action'
+actionpack (5.2.4.1) lib/abstract_controller/base.rb:194:in `process_action'
+actionpack (5.2.4.1) lib/action_controller/metal/rendering.rb:30:in `process_action'
+actionpack (5.2.4.1) lib/abstract_controller/callbacks.rb:42:in `block in process_action'
+activesupport (5.2.4.1) lib/active_support/callbacks.rb:132:in `run_callbacks'
+actionpack (5.2.4.1) lib/abstract_controller/callbacks.rb:41:in `process_action'
+actionpack (5.2.4.1) lib/action_controller/metal/rescue.rb:22:in `process_action'
+actionpack (5.2.4.1) lib/action_controller/metal/instrumentation.rb:34:in `block in process_action'
+activesupport (5.2.4.1) lib/active_support/notifications.rb:168:in `block in instrument'
+activesupport (5.2.4.1) lib/active_support/notifications/instrumenter.rb:23:in `instrument'
+activesupport (5.2.4.1) lib/active_support/notifications.rb:168:in `instrument'
+actionpack (5.2.4.1) lib/action_controller/metal/instrumentation.rb:32:in `process_action'
+actionpack (5.2.4.1) lib/action_controller/metal/params_wrapper.rb:256:in `process_action'
+activerecord (5.2.4.1) lib/active_record/railties/controller_runtime.rb:24:in `process_action'
+actionpack (5.2.4.1) lib/abstract_controller/base.rb:134:in `process'
+actionview (5.2.4.1) lib/action_view/rendering.rb:32:in `process'
+actionpack (5.2.4.1) lib/action_controller/metal.rb:191:in `dispatch'
+actionpack (5.2.4.1) lib/action_controller/metal.rb:252:in `dispatch'
+actionpack (5.2.4.1) lib/action_dispatch/routing/route_set.rb:52:in `dispatch'
+actionpack (5.2.4.1) lib/action_dispatch/routing/route_set.rb:34:in `serve'
+actionpack (5.2.4.1) lib/action_dispatch/routing/mapper.rb:18:in `block in <class:Constraints>'
+actionpack (5.2.4.1) lib/action_dispatch/routing/mapper.rb:48:in `serve'
+actionpack (5.2.4.1) lib/action_dispatch/journey/router.rb:52:in `block in serve'
+actionpack (5.2.4.1) lib/action_dispatch/journey/router.rb:35:in `each'
+actionpack (5.2.4.1) lib/action_dispatch/journey/router.rb:35:in `serve'
+actionpack (5.2.4.1) lib/action_dispatch/routing/route_set.rb:840:in `call'
+warden (1.2.8) lib/warden/manager.rb:36:in `block in call'
+warden (1.2.8) lib/warden/manager.rb:34:in `catch'
+warden (1.2.8) lib/warden/manager.rb:34:in `call'
+rack (2.1.2) lib/rack/tempfile_reaper.rb:17:in `call'
+rack (2.1.2) lib/rack/etag.rb:27:in `call'
+rack (2.1.2) lib/rack/conditional_get.rb:40:in `call'
+rack (2.1.2) lib/rack/head.rb:14:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.1.2) lib/rack/session/abstract/id.rb:269:in `context'
+rack (2.1.2) lib/rack/session/abstract/id.rb:263:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/cookies.rb:670:in `call'
+activerecord (5.2.4.1) lib/active_record/migration.rb:559:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.4.1) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.4.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.4.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.4.1) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.4.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.4.1) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.4.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.1.2) lib/rack/method_override.rb:24:in `call'
+rack (2.1.2) lib/rack/runtime.rb:24:in `call'
+activesupport (5.2.4.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.1.2) lib/rack/sendfile.rb:113:in `call'
+railties (5.2.4.1) lib/rails/engine.rb:524:in `call'
+puma (3.12.2) lib/puma/configuration.rb:227:in `call'
+puma (3.12.2) lib/puma/server.rb:674:in `handle_request'
+puma (3.12.2) lib/puma/server.rb:476:in `process_client'
+puma (3.12.2) lib/puma/server.rb:334:in `block in run'
+puma (3.12.2) lib/puma/thread_pool.rb:135:in `block in spawn_thread'

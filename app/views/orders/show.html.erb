@@ -1,0 +1,38 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @order.Name %>
+</p>
+
+<p>
+  <% if @order.image.attached? %>
+    <p>
+      <strong>Image:</strong>
+      <br>
+      <%= image_tag @order.image %>
+    </p>
+  <% end %>
+</p>
+<p>
+  <strong>Description:</strong>
+  <%= @order.Description %>
+</p>
+
+<p>
+  <strong>Age:</strong>
+  <%= @order.Age %>
+</p>
+
+<p>
+  <strong>Cost:</strong>
+  <%= @order.Cost %>
+</p>
+
+<p>
+  <strong>Address:</strong>
+  <%= @order.Address %>
+</p>
+
+<%= link_to 'Edit', edit_order_path(@order) %> |
+<%= link_to 'Back', orders_path %>
